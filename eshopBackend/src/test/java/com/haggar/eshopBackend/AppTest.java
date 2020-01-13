@@ -1,4 +1,4 @@
-package com.haggar.e_shopBackend;
+package com.haggar.eshopBackend;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

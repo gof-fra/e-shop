@@ -23,5 +23,5 @@
 hs_err_pid*
 
 
-/e-shop/target/
-/e-shopBackend/target/
+/eshop/target/
+/eshopBackend/target/
