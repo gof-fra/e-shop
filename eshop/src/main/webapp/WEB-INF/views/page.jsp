@@ -15,8 +15,9 @@
 
 <head>
 	<title>Affrah - ${title} </title>
+	
 	<script type="text/javascript">
-		window.menu = '{title}';
+		window.menu = '${title}';
 	</script>
 	<!-- Meta tag Keywords -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -60,13 +61,9 @@
 	<%@ include file = "./canal/navbar.jsp" %>
 	<!-- //navigation -->
 
-	<!-- navigation -->
-	<%@ include file = "./canal/slide.jsp" %>
-	<!-- //navigation -->
-
-	<!-- footer -->
-		<%@ include file = "./canal/footer.jsp" %>
-	<!-- //copyright -->
+	<c:if test="${userClickHome == true }">
+		<%@ include file = "./canal/slide.jsp" %>
+	</c:if>
 	
 	<c:if test="${userClickAbout == true }">
 		<%@ include file="about.jsp" %>
@@ -75,8 +72,18 @@
 	<c:if test="${userClickContact == true }">
 		<%@ include file="contact.jsp" %>
 	</c:if>
-
-
+	
+	<c:if test="${userClickAllProducts == true }">
+		<%@ include file="listProducts.jsp" %>
+	</c:if>
+	
+	<c:if test="${userClickCategorylProducts == true or userClickCategorylProducts == true}">
+		<%@ include file="listProducts.jsp" %>
+	</c:if>
+	
+	<!-- footer -->
+		<%@ include file = "./canal/footer.jsp" %>
+	<!-- //copyright -->
 
 	<!-- js-files -->
 	<!-- jquery -->

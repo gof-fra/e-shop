@@ -125,29 +125,6 @@
 					</div>
 				</div>
 			</div>
-			<!-- form -->
-			<form action="#" method="post">
-				<div class="contact-grids1 w3agile-6">
-					<div class="row">
-						<div class="col-md-6 col-sm-6 contact-form1 form-group">
-							<label class="col-form-label">Name</label>
-							<input type="text" class="form-control" name="Name" placeholder="" required="">
-						</div>
-						<div class="col-md-6 col-sm-6 contact-form1 form-group">
-							<label class="col-form-label">E-mail</label>
-							<input type="email" class="form-control" name="Email" placeholder="" required="">
-						</div>
-					</div>
-					<div class="contact-me animated wow slideInUp form-group">
-						<label class="col-form-label">Message</label>
-						<textarea name="Message" class="form-control" placeholder="" required=""> </textarea>
-					</div>
-					<div class="contact-form">
-						<input type="submit" value="Submit">
-					</div>
-				</div>
-			</form>
-			<!-- //form -->
 		</div>
 	</div>
 	<!-- //contact -->

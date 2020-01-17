@@ -9,6 +9,12 @@
   <url>http://maven.apache.org</url>
   <dependencies>
   
+  	<dependency>
+  	  <groupId>com.haggar</groupId>
+  	  <artifactId>eshopBackend</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+    </dependency>
+  
   	<!-- https://mvnrepository.com/artifact/javax/javaee-api -->
 	<dependency>
 	    <groupId>javax</groupId>

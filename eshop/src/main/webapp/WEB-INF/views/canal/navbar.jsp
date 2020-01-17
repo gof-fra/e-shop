@@ -220,10 +220,12 @@
 				<div class="agileits-navi_search">
 					<div class="dropdown show" id="agileinfo-nav_search" name="agileinfo_search" class="border" required="">
 					  <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					    All Categories
+					    All Category
 					  </a>				
 					  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-					    	
+						<c:forEach items="${categories}" var="category">
+					  		<a href="${contextRoot}/show/category/${category.id}/products" class="list-group-item">${category.name}</a>
+					  	</c:forEach>	    	
 					  </div>
 					</div>
 				</div>
@@ -317,10 +319,10 @@
 								</div>
 							</div>
 						</li>
-						<li class="nav-item mr-lg-2 mb-lg-0 mb-2" id="">
+						<li class="nav-item mr-lg-2 mb-lg-0 mb-2" id="elect">
 							<a class="nav-link" href="${contextRoot}/about" id="about">About Us</a>
 						</li>
-						<li class="nav-item" id="">
+						<li class="nav-item mr-lg-2 mb-lg-0 mb-2" id="elect">
 							<a class="nav-link" href="${contextRoot}/contact" id="contact">Contact Us</a>
 						</li>
 					</ul>
