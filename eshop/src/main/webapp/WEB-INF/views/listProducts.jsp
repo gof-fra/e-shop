@@ -805,9 +805,37 @@
 						<!-- //arrivals -->
 					</div>
 					<!-- //product right -->
+					
+					
+					
 				</div>
+				
+				
 			</div>
+			<div class="row">
+					<div class="col-xs-12">
+						
+						<table id="productListTable" class="table table-striped table borderd">
+							
+							<thead>
+								<tr>
+									<th>ID</th>
+									<th>Name</th>
+								</tr>
+							</thead>
+						
+						
+						</table>
+					
+					
+					</div>
+				
+				 </div>
+			
 		</div>
+		
+		
+		
 	</div>
 
 	
@@ -938,6 +966,9 @@
 
 	<!-- for bootstrap working -->
 	<script src="${js}/bootstrap.js"></script>
+	<script src="${js}/jquery.dataTables.js"></script>
+	<!-- //jquery -->
+	<script src="${js}/myapp.js"></script>
 	<!-- //for bootstrap working -->
 	<!-- //js-files -->
 

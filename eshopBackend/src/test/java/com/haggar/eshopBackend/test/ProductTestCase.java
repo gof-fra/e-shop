@@ -29,7 +29,7 @@ public class ProductTestCase {
 	}
 	
 	
-	@Test
+/*	@Test
 	public void testCRUDProduct() {
 		
 		// Create operation
@@ -43,7 +43,7 @@ public class ProductTestCase {
 		product.setCategoryId(3);
 		product.setSupplierId(3);
 		
-		assertEquals("Not ok to insert the product", false, productDAO.add(product));
+		assertEquals("Not ok to insert the product", true, productDAO.add(product));
 		
 		
 		// reading and updating the category
@@ -61,12 +61,12 @@ public class ProductTestCase {
 		assertEquals("Not ok for fetching the product on list", 6, productDAO.list().size());
 		
 		
-	}
+	}*/
 	
-	/*@Test 
+	@Test 
 	public void testListActivateProduct() {
 		
-		assertEquals("Not ok for fetching the product on list", 5, productDAO.listActiveProducts().size());
+		assertEquals("Not ok for fetching the product in list active product", 5, productDAO.listActiveProducts().size());
 		
 	}
 	
@@ -74,9 +74,9 @@ public class ProductTestCase {
 	@Test 
 	public void testListActivateProductsByCategory() {
 		
-		assertEquals("Not ok for fetching ", 3, productDAO.listActiveProductsByCategory(3).size());
+		assertEquals("Not ok for fetching the product in list active product by category ", 4, productDAO.listActiveProductsByCategory(3).size());
 		
-		assertEquals("Not ok for fetching ", 2, productDAO.listActiveProductsByCategory(1).size());
+		assertEquals("Not ok for fetching the product in list active product by category", 1, productDAO.listActiveProductsByCategory(1).size());
 		
 	}
 
@@ -84,8 +84,8 @@ public class ProductTestCase {
 	@Test 
 	public void testGetLatestActivateProducts() {
 		
-		assertEquals("Not ok for fetching ", 3, productDAO.getLatestActivateProducts(3).size());
+		assertEquals("Not ok for fetching the latest products ", 3, productDAO.getLatestActivateProducts(3).size());
 		
 	}
-	 */
+	 
 }

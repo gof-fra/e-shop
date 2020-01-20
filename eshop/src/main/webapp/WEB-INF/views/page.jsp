@@ -221,6 +221,7 @@
 	<!-- js-files -->
 	<!-- jquery -->
 	<script src="${js}/jquery-2.2.3.min.js"></script>
+	<script src="${js}/jquery.dataTables.js"></script>
 	<!-- //jquery -->
 	<script src="${js}/myapp.js"></script>
 	
