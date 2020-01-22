@@ -1,28 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
-<spring:url var="css" value="/resources/css"/>
-<spring:url var="js" value="/resources/js"/>
-<spring:url var="images" value="/resources/images"/>
-<spring:url var="fonts" value="/resources/fonts"/>
+<spring:url var="css" value="/resources/css" />
+<spring:url var="js" value="/resources/js" />
+<spring:url var="images" value="/resources/images" />
+
 
 <c:set var="contextRoot" value="${pageContext.request.contextPath}" />
+
 
 <!DOCTYPE html>
 <html lang="zxx">
 
 <head>
-	<title>Affrah - ${title} </title>
-	
-	<script type="text/javascript">
-	
-		window.menu = '${title}';
-		
-		window.contextRoot = '${contextRoot}'
-		
-	</script>
+	<title>Affrah</title>
 	<!-- Meta tag Keywords -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8" />
@@ -49,8 +42,6 @@
 	<link href="${css}/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
 	<!-- pop-up-box -->
 	<link href="${css}/menu.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="${css}/dataTables.bootstrap4.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="${css}/jquery.dataTables.css" rel="stylesheet" type="text/css" media="all" />
 	<!-- menu style -->
 	<!-- //Custom-Files -->
 
@@ -63,41 +54,107 @@
 </head>
 
 <body>
-	<!-- navigation -->
-	<%@ include file = "./canal/navbar.jsp" %>
-	<!-- //navigation -->
+	<!-- top-header -->
+	
+	<!-- // navigation -->
 
-	<c:if test="${userClickHome == true }">
-		<%@ include file = "./canal/slide.jsp" %>
-	</c:if>
+	<!-- banner-2 -->
+	<div class="page-head_agile_info_w3l">
+
+	</div>
+	<!-- //banner-2 -->
+	<!-- page -->
+	<div class="services-breadcrumb">
+		<div class="agile_inner_breadcrumb">
+			<div class="container">
+				<ul class="w3_short">
+					<li>
+						<a href="${contextRoot}/home">Home</a> <i>|</i>
+					</li>
+					<li>
+						<a href="${contextRoot}/show/all/products">Product</a> <i>|</i>
+					</li>
+					<li>
+						${product.name}
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- //page -->
+
+	<!-- Single Page -->
+	<div class="banner-bootom-w3-agileits py-5">
+		<div class="container py-xl-4 py-lg-2">
+			<!-- tittle heading -->
+			<h3 class="tittle-w3l text-center mb-lg-5 mb-sm-4 mb-3">
+				<span>S</span>ingle
+				<span>P</span>age</h3>
+			<!-- //tittle heading -->
+			<div class="row">
+				<div class="col-lg-5 col-md-8 single-right-left ">
+					<div class="grid images_3_of_2">
+						<div class="flexslider">
+							<div class="thumb-image">
+								<img src="${images}/${product.code}.jpg" width="600" height="600" data-imagezoom="true" class="img-fluid" alt=""> 
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-7 single-right-left simpleCart_shelfItem">
+				
+					<h3 class="mb-3">${product.name}</h3>
+					<hr>
+					
+					<p class="mb-3">${product.description}</p>
+					<hr>
+					
+					<h4>Price: <strong>&#8377; ${product.unitPrice} </strong></h4>
+					<hr>
+					
+					
+					<c:choose>
+						<c:when test="${product.quantity < 1}">
+							<h6>Qty: <span style="color:red">Out of Stock</span></h6>
+						</c:when>
+						
+						<c:otherwise>
+							<p>Quantity: ${product.quantity}</p>
+						</c:otherwise>
+						
+					</c:choose>
+					<br>
+					<c:choose>
+						<c:when test="${product.quantity < 1}">
+							<a href="javascript:void(0)" class="btn btn-success disabled"> <strike>
+								<span class="glyphicon glyphicon-shopping-cart">Add to cart</strike></span>
+							</a>
+						</c:when>
+						
+						<c:otherwise>
+							<a href="${contextRoot}/cart/add/${product.id}/product" class="btn btn-success">
+							<span class="glyphicon glyphicon-shopping-cart">Add to cart</span>
+							</a>
+						</c:otherwise>
+						
+					</c:choose>
+					
+					<hr>
+				
+					
+					<a href="${contextRoot}/show/all/products" class="btn btn-success">
+						<span class="glyphicon glyphicon-shopping-cart"></span> Back
+					</a>
+					
+					<hr>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+
 	
-	<c:if test="${userClickAbout == true }">
-		<%@ include file="about.jsp" %>
-	</c:if>
-	
-	<c:if test="${userClickContact == true }">
-		<%@ include file="contact.jsp" %>
-	</c:if>
-	
-	<c:if test="${userClickAllProducts == true }">
-		<%@ include file="listProducts.jsp" %>
-	</c:if>
-	
-	<c:if test="${userClickCategorylProducts == true or userClickCategorylProducts == true}">
-		<%@ include file="listProducts.jsp" %>
-	</c:if>
-	
-	<c:if test="${userClickShowProduct == true }">
-		<%@ include file="singleProduct.jsp" %>
-	</c:if>
-	
-	<c:if test="${userClickManageProducts == true }">
-		<%@ include file="manageProduct.jsp" %>
-	</c:if>
-	
-	<!-- footer -->
-		<%@ include file = "./canal/footer.jsp" %>
-	<!-- //copyright -->
 
 	<!-- js-files -->
 	<!-- jquery -->
@@ -183,10 +240,25 @@
 		}
 	</script>
 	<!-- //password-script -->
-	
-	<!-- scroll seller -->
-	<script src="${js}/scroll.js"></script>
-	<!-- //scroll seller -->
+
+	<!-- imagezoom -->
+	<script src="${js}/imagezoom.js"></script>
+	<!-- //imagezoom -->
+
+	<!-- flexslider -->
+	<link rel="stylesheet" href="${css}/flexslider.css" type="text/css" media="screen" />
+
+	<script src="${js}/jquery.flexslider.js"></script>
+	<script>
+		// Can also be used with $(document).ready()
+		$(window).load(function () {
+			$('.flexslider').flexslider({
+				animation: "slide",
+				controlNav: "thumbnails"
+			});
+		});
+	</script>
+	<!-- //FlexSlider-->
 
 	<!-- smoothscroll -->
 	<script src="${js}/SmoothScroll.min.js"></script>
@@ -231,17 +303,7 @@
 	<script src="${js}/bootstrap.js"></script>
 	<!-- //for bootstrap working -->
 	<!-- //js-files -->
-	
-	<!-- js-files -->
-	<!-- jquery -->
-	<script src="${js}/jquery-2.2.3.min.js"></script>
-	<script src="${js}/jquery.dataTables.js"></script>
-	<!-- //jquery -->
-	<script src="${js}/myapp.js"></script>
-	<script src="${js}/dataTables.bootstrap4.js"></script>
-	<script src="${js}/jquery.dataTables.js"></script>
-	
+
 </body>
 
 </html>
-

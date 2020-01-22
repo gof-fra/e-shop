@@ -1,12 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
-<spring:url var="css" value="/resources/css"/>
-<spring:url var="js" value="/resources/js"/>
-<spring:url var="images" value="/resources/images"/>
-<spring:url var="fonts" value="/resources/fonts"/>
+<spring:url var="css" value="/resources/css" />
+<spring:url var="js" value="/resources/js" />
+<spring:url var="images" value="/resources/images" />
 
 <c:set var="contextRoot" value="${pageContext.request.contextPath}" />
 
@@ -14,15 +13,7 @@
 <html lang="zxx">
 
 <head>
-	<title>Affrah - ${title} </title>
-	
-	<script type="text/javascript">
-	
-		window.menu = '${title}';
-		
-		window.contextRoot = '${contextRoot}'
-		
-	</script>
+	<title> Affrah Shop - ${title} </title>
 	<!-- Meta tag Keywords -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8" />
@@ -49,8 +40,6 @@
 	<link href="${css}/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
 	<!-- pop-up-box -->
 	<link href="${css}/menu.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="${css}/dataTables.bootstrap4.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="${css}/jquery.dataTables.css" rel="stylesheet" type="text/css" media="all" />
 	<!-- menu style -->
 	<!-- //Custom-Files -->
 
@@ -63,40 +52,47 @@
 </head>
 
 <body>
-	<!-- navigation -->
-	<%@ include file = "./canal/navbar.jsp" %>
-	<!-- //navigation -->
+	<!-- top-header -->
 
-	<c:if test="${userClickHome == true }">
-		<%@ include file = "./canal/slide.jsp" %>
-	</c:if>
-	
-	<c:if test="${userClickAbout == true }">
-		<%@ include file="about.jsp" %>
-	</c:if>
-	
-	<c:if test="${userClickContact == true }">
-		<%@ include file="contact.jsp" %>
-	</c:if>
-	
-	<c:if test="${userClickAllProducts == true }">
-		<%@ include file="listProducts.jsp" %>
-	</c:if>
-	
-	<c:if test="${userClickCategorylProducts == true or userClickCategorylProducts == true}">
-		<%@ include file="listProducts.jsp" %>
-	</c:if>
-	
-	<c:if test="${userClickShowProduct == true }">
-		<%@ include file="singleProduct.jsp" %>
-	</c:if>
-	
-	<c:if test="${userClickManageProducts == true }">
-		<%@ include file="manageProduct.jsp" %>
-	</c:if>
-	
+	<!-- banner-2 -->
+	<div class="page-head_agile_info_w3l">
+		<!-- watch & phone -->
+	</div>
+	<!-- //banner-2 -->
+	<!-- page -->
+	<div class="services-breadcrumb">
+		<div class="agile_inner_breadcrumb">
+			<div class="container">
+				<ul class="w3_short">
+					<li>
+						<a href="${contextRoot}/home">Home</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- //page -->
+
+	<!-- about -->
+	<div class="welcome py-sm-5 py-4">
+		<div class="container py-xl-4 py-lg-2">
+			<!-- tittle heading -->
+			<h3 class="tittle-w3l text-center mb-lg-5 mb-sm-4 mb-3">
+				<span> </span></h3>
+			<!-- //tittle heading -->
+			<div class="row">
+				<div class="col-lg-6 welcome-left">
+					<h3>Oups!</h3><br><br>
+					<h3>${errorTitle}</h3>
+				</div>
+				<div class="col-lg-6 welcome-right-top mt-lg-0 mt-sm-5 mt-4">
+					<img src="${images}/400.jpeg" class="img-fluid" alt=" ">
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //about -->
 	<!-- footer -->
-		<%@ include file = "./canal/footer.jsp" %>
 	<!-- //copyright -->
 
 	<!-- js-files -->
@@ -183,10 +179,6 @@
 		}
 	</script>
 	<!-- //password-script -->
-	
-	<!-- scroll seller -->
-	<script src="${js}/scroll.js"></script>
-	<!-- //scroll seller -->
 
 	<!-- smoothscroll -->
 	<script src="${js}/SmoothScroll.min.js"></script>
@@ -231,17 +223,7 @@
 	<script src="${js}/bootstrap.js"></script>
 	<!-- //for bootstrap working -->
 	<!-- //js-files -->
-	
-	<!-- js-files -->
-	<!-- jquery -->
-	<script src="${js}/jquery-2.2.3.min.js"></script>
-	<script src="${js}/jquery.dataTables.js"></script>
-	<!-- //jquery -->
-	<script src="${js}/myapp.js"></script>
-	<script src="${js}/dataTables.bootstrap4.js"></script>
-	<script src="${js}/jquery.dataTables.js"></script>
-	
+
 </body>
 
 </html>
-

@@ -43,6 +43,8 @@
 	<!-- pop-up-box -->
 	<link href="${css}/menu.css" rel="stylesheet" type="text/css" media="all" />
 	<!-- menu style -->
+	<link href="${css}/dataTables.bootstrap4.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="${css}/jquery.dataTables.css" rel="stylesheet" type="text/css" media="all" />
 	<!-- //Custom-Files -->
 
 	<!-- web fonts -->
@@ -50,6 +52,17 @@
 	<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
 	    rel="stylesheet">
 	<!-- //web fonts -->
+	
+	<style type="text/css">
+	
+		.dataTableImg {
+		
+			width: 50px;
+			height: 50px;
+		
+		}
+		
+	</style>
 
 </head>
 
@@ -67,6 +80,11 @@
 			
 				<div class="container">
 				<c:if test="${userClickAllProducts == true}">
+				
+					<script type="text/javascript">
+						window.categoryId = ''; 
+					</script>
+					
 					<ul class="w3_short">
 						<li>
 							<a href="${contextRoot}/home">Home</a>
@@ -77,6 +95,11 @@
 				</c:if>
 				
 				<c:if test="${userClickCategorylProducts == true}">
+				
+					<script type="text/javascript">
+						window.categoryId = '${category.id}'; 
+					</script>
+					
 					<ul class="w3_short">
 						<li>
 							<a href="${contextRoot}/home">Home</a>
@@ -107,13 +130,13 @@
 				<!-- product left -->
 				<div class="agileinfo-ads-display col-lg-9">
 					<div class="wrapper">
-						<!-- first section -->
+						<!-- second section -->
 						<div class="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mb-4">
 							<div class="row">
 								<div class="col-md-4 product-men">
 									<div class="men-pro-item simpleCart_shelfItem">
 										<div class="men-thumb-item text-center">
-											<img src="${images}/m1.jpg" alt="">
+											<img src="${images}/mk1.jpg" alt="">
 											<div class="men-cart-pro">
 												<div class="inner-men-cart-pro">
 													<a href="single.html" class="link-product-add-cart">Quick View</a>
@@ -122,60 +145,21 @@
 										</div>
 										<div class="item-info-product text-center border-top mt-4">
 											<h4 class="pt-1">
-												<a href="single.html">Samsung Galaxy J7</a>
+												<a href="single.html">Infinix Hot S3</a>
 											</h4>
 											<div class="info-product-price my-2">
-												<span class="item_price">$200.00</span>
-												<del>$280.00</del>
-											</div>
-											<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-												<form action="#" method="post">
-													<fieldset>
-														<input type="hidden" name="cmd" value="_cart" />
-														<input type="hidden" name="add" value="1" />
-														<input type="hidden" name="business" value=" " />
-														<input type="hidden" name="item_name" value="Samsung Galaxy J7" />
-														<input type="hidden" name="amount" value="200.00" />
-														<input type="hidden" name="discount_amount" value="1.00" />
-														<input type="hidden" name="currency_code" value="USD" />
-														<input type="hidden" name="return" value=" " />
-														<input type="hidden" name="cancel_return" value=" " />
-														<input type="submit" name="submit" value="Add to cart" class="button btn" />
-													</fieldset>
-												</form>
-											</div>
-
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4 product-men mt-md-0 mt-5">
-									<div class="men-pro-item simpleCart_shelfItem">
-										<div class="men-thumb-item text-center">
-											<img src="${images}/m2.jpg" alt="">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="single.html" class="link-product-add-cart">Quick View</a>
-												</div>
+												<span class="item_price">$300.00</span>
+												<del>$320.00</del>
 											</div>
 											<span class="product-new-top">New</span>
-
-										</div>
-										<div class="item-info-product text-center border-top mt-4">
-											<h4 class="pt-1">
-												<a href="single.html">OPPO A37f</a>
-											</h4>
-											<div class="info-product-price my-2">
-												<span class="item_price">$230.00</span>
-												<del>$250.00</del>
-											</div>
 											<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
 												<form action="#" method="post">
 													<fieldset>
 														<input type="hidden" name="cmd" value="_cart" />
 														<input type="hidden" name="add" value="1" />
 														<input type="hidden" name="business" value=" " />
-														<input type="hidden" name="item_name" value="OPPO A37f" />
-														<input type="hidden" name="amount" value="230.00" />
+														<input type="hidden" name="item_name" value="Infinix Hot S3" />
+														<input type="hidden" name="amount" value="300.00" />
 														<input type="hidden" name="discount_amount" value="1.00" />
 														<input type="hidden" name="currency_code" value="USD" />
 														<input type="hidden" name="return" value=" " />
@@ -224,90 +208,6 @@
 													</fieldset>
 												</form>
 											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- //first section -->
-						<!-- second section -->
-						<div class="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mb-4">
-							<div class="row">
-								<div class="col-md-4 product-men">
-									<div class="men-pro-item simpleCart_shelfItem">
-										<div class="men-thumb-item text-center">
-											<img src="${images}/mk1.jpg" alt="">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="single.html" class="link-product-add-cart">Quick View</a>
-												</div>
-											</div>
-										</div>
-										<div class="item-info-product text-center border-top mt-4">
-											<h4 class="pt-1">
-												<a href="single.html">Infinix Hot S3</a>
-											</h4>
-											<div class="info-product-price my-2">
-												<span class="item_price">$300.00</span>
-												<del>$320.00</del>
-											</div>
-											<span class="product-new-top">New</span>
-											<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-												<form action="#" method="post">
-													<fieldset>
-														<input type="hidden" name="cmd" value="_cart" />
-														<input type="hidden" name="add" value="1" />
-														<input type="hidden" name="business" value=" " />
-														<input type="hidden" name="item_name" value="Infinix Hot S3" />
-														<input type="hidden" name="amount" value="300.00" />
-														<input type="hidden" name="discount_amount" value="1.00" />
-														<input type="hidden" name="currency_code" value="USD" />
-														<input type="hidden" name="return" value=" " />
-														<input type="hidden" name="cancel_return" value=" " />
-														<input type="submit" name="submit" value="Add to cart" class="button btn" />
-													</fieldset>
-												</form>
-											</div>
-
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4 product-men mt-md-0 mt-5">
-									<div class="men-pro-item simpleCart_shelfItem">
-										<div class="men-thumb-item text-center">
-											<img src="${images}/mk2.jpg" alt="">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="single.html" class="link-product-add-cart">Quick View</a>
-												</div>
-											</div>
-
-										</div>
-										<div class="item-info-product text-center border-top mt-4">
-											<h4 class="pt-1">
-												<a href="single.html">Moto X4 (6 GB)</a>
-											</h4>
-											<div class="info-product-price my-2">
-												<span class="item_price">$233.00</span>
-												<del>$240.00</del>
-											</div>
-											<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-												<form action="#" method="post">
-													<fieldset>
-														<input type="hidden" name="cmd" value="_cart" />
-														<input type="hidden" name="add" value="1" />
-														<input type="hidden" name="business" value=" " />
-														<input type="hidden" name="item_name" value="Moto X4 (6 GB)" />
-														<input type="hidden" name="amount" value="233.00" />
-														<input type="hidden" name="discount_amount" value="1.00" />
-														<input type="hidden" name="currency_code" value="USD" />
-														<input type="hidden" name="return" value=" " />
-														<input type="hidden" name="cancel_return" value=" " />
-														<input type="submit" name="submit" value="Add to cart" class="button btn" />
-													</fieldset>
-												</form>
-											</div>
-
 										</div>
 									</div>
 								</div>
@@ -590,10 +490,49 @@
 								</div>
 							</div>
 						</div>
+						<br>
+						<hr>
+						<div>
+						
+							<table id="productListTable" class="table table-striped table borderd">
+					
+								<thead>
+									<tr>
+										<th></th>
+										<th>Name</th>
+										<th>Brand</th>
+										<th>Price</th>
+										<th>Qty</th>
+										<th></th>
+									</tr>
+								</thead>
+								
+								<tfoot>
+									<tr>
+										<th></th>
+										<th>Name</th>
+										<th>Brand</th>
+										<th>Price</th>
+										<th>Qty</th>
+										<th></th>
+									</tr>
+								</tfoot>
+							
+							</table>
+						</div>
+						<hr>
+						
+						
+					
+						<!-- //fourth section -->
+						
 						<!-- //fourth section -->
 					</div>
 				</div>
 				<!-- //product left -->
+			
+				
+				
 				<!-- product right -->
 				<div class="col-lg-3 mt-lg-0 mt-4 p-lg-0">
 					<div class="side-bar p-sm-4 p-3">
@@ -809,33 +748,11 @@
 					
 					
 				</div>
-				
-				
+					
 			</div>
-			<div class="row">
-					<div class="col-xs-12">
-						
-						<table id="productListTable" class="table table-striped table borderd">
-							
-							<thead>
-								<tr>
-									<th>ID</th>
-									<th>Name</th>
-								</tr>
-							</thead>
-						
-						
-						</table>
-					
-					
-					</div>
 				
-				 </div>
-			
 		</div>
-		
-		
-		
+			
 	</div>
 
 	
@@ -969,6 +886,8 @@
 	<script src="${js}/jquery.dataTables.js"></script>
 	<!-- //jquery -->
 	<script src="${js}/myapp.js"></script>
+	<script src="${js}/dataTables.bootstrap4.js"></script>
+	<script src="${js}/jquery.dataTables.js"></script>
 	<!-- //for bootstrap working -->
 	<!-- //js-files -->
 
