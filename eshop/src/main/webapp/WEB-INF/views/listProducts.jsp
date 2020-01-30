@@ -45,6 +45,8 @@
 	<!-- menu style -->
 	<link href="${css}/dataTables.bootstrap4.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="${css}/jquery.dataTables.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="${css}/admin.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="${css}/myapp.css" rel="stylesheet" type="text/css" media="all" />
 	<!-- //Custom-Files -->
 
 	<!-- web fonts -->
@@ -54,15 +56,12 @@
 	<!-- //web fonts -->
 	
 	<style type="text/css">
-	
 		.dataTableImg {
-		
 			width: 50px;
 			height: 50px;
-		
 		}
-		
 	</style>
+
 
 </head>
 
@@ -493,8 +492,7 @@
 						<br>
 						<hr>
 						<div>
-						
-							<table id="productListTable" class="table table-striped table borderd">
+							<table id="productListTable" class="table table-striped table bordered">
 					
 								<thead>
 									<tr>
@@ -522,8 +520,6 @@
 						</div>
 						<hr>
 						
-						
-					
 						<!-- //fourth section -->
 						
 						<!-- //fourth section -->
@@ -873,9 +869,9 @@
 				easingType: 'linear' 
 			};
 			*/
-			$().UItoTop({
+		 	$().UItoTop({
 				easingType: 'easeOutQuart'
-			});
+			}); 
 
 		});
 	</script>
@@ -884,9 +880,9 @@
 	<!-- for bootstrap working -->
 	<script src="${js}/bootstrap.js"></script>
 	<script src="${js}/jquery.dataTables.js"></script>
-	<!-- //jquery -->
 	<script src="${js}/myapp.js"></script>
 	<script src="${js}/dataTables.bootstrap4.js"></script>
+	<script src="${js}/jquery-2.2.3.min.js"></script>
 	<script src="${js}/jquery.dataTables.js"></script>
 	<!-- //for bootstrap working -->
 	<!-- //js-files -->

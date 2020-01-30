@@ -2,6 +2,7 @@ package com.haggar.eshop.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.slf4j.Logger;
@@ -16,6 +17,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.haggar.eshop.util.FileUploadUtility;
+import com.haggar.eshop.validator.ProductValidator;
 import com.haggar.eshopBackend.dao.CategoryDAO;
 import com.haggar.eshopBackend.dao.ProductDAO;
 import com.haggar.eshopBackend.dto.Category;
@@ -68,7 +71,10 @@ public class ManagementController {
 	
 	// submission for new products
 	@RequestMapping(value="/products", method=RequestMethod.POST)
-	public String handlerProductSubmission(@Valid @ModelAttribute("product") Product mProduct, BindingResult results, Model model) {
+	public String handlerProductSubmission(@Valid @ModelAttribute("product") Product mProduct, BindingResult results, 
+			Model model, HttpServletRequest requests) {
+		
+		new ProductValidator().validate(mProduct, results);
 		
 		// looking for errors
 		if(results.hasErrors()) {
@@ -85,6 +91,12 @@ public class ManagementController {
 		
 		// create a new product
 		productDAO.add(mProduct);
+		
+		if(!mProduct.getFile().getOriginalFilename().equals("")) {
+			
+			FileUploadUtility.uploadFile(requests, mProduct.getFile(), mProduct.getCode());
+			
+		}
 		
 		return "redirect:/manage/products?operation=product";
 		

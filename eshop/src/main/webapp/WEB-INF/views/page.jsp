@@ -51,6 +51,8 @@
 	<link href="${css}/menu.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="${css}/dataTables.bootstrap4.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="${css}/jquery.dataTables.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="${css}/admin.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="${css}/myapp.css" rel="stylesheet" type="text/css" media="all" />
 	<!-- menu style -->
 	<!-- //Custom-Files -->
 
@@ -221,7 +223,7 @@
 			*/
 			$().UItoTop({
 				easingType: 'easeOutQuart'
-			});
+			}); 
 
 		});
 	</script>
@@ -240,6 +242,8 @@
 	<script src="${js}/myapp.js"></script>
 	<script src="${js}/dataTables.bootstrap4.js"></script>
 	<script src="${js}/jquery.dataTables.js"></script>
+	<script src="${js}/bootbox.min.js"></script>
+	<script src="${js}/bootbox.js"></script>
 	
 </body>
 

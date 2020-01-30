@@ -308,7 +308,7 @@
 													<a href="${contextRoot}/checkout" id="checkout">Checkout</a>
 												</li>
 												<li>
-													<a href="${contextRoot}/payment" id="payment">Payment Page</a>
+													<a href="${contextRoot}/payment" id="payment">Payment</a>
 												</li>
 												<li>
 													<a href="${contextRoot}/manage/products" id="manageProducts">Manage</a>

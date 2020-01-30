@@ -35,7 +35,7 @@ public class Product {
 	private String description; 
 	
 	@Column(name = "unit_price")
-	@Min(value=1, message="Be less than 1")
+	@Min(value=1, message="Can't be less than 1")
 	private double unitPrice;
 	private int quantity;
 	

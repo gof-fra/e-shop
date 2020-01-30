@@ -2,14 +2,22 @@ $(function() {
 	
 	switch(menu) {
 	
-	case 'About US':
-		 $('#about').addClass('active');
-		 break;
-	case 'Contact US':
-		 $('#contact').addClass('active');
-		 break;
+	case 'About Us':
+		$('#about').addClass('active');
+		break;
+	case 'Contact Us':
+		$('#contact').addClass('active');
+		break;
+	case 'All Products':
+		$('#listProducts').addClass('active');
+		break;
+	case 'Manage Products':
+		$('#manageProducts').addClass('active');
+		break;
 	default:
-		$('#home').addClass('active');
+		if(menu == "Home") break;
+		$('#listProducts').addClass('active');
+		$('#a_'+menu).addClass('active');
 		break;
 	}
 	
@@ -108,6 +116,53 @@ $(function() {
 		}, 3000)
 		
 	}
+	
+	
+	$('.switch input[type="checkbox"]').on('change', function()  {
 		
+		var checkbox = $(this);
+		var	checked = checkbox.prop('checked');
+		var dMsg = (checked)? 'You want to activate the product? ':
+							  'You want to desactivate the product? ';
+		
+		var value = checkbox.prop('value');
+		
+		confirm({
+		
+			size: 'medium',
+			title: 'Product Activation & Desactivation',
+			message: dMsg,
+			callback: function(confirmed) {
+				
+				if(confirmed) {
+					
+					console.log(value);
+					bootbox.alert({
+						size: 'medium',
+						title: 'Information',
+						message: 'You are going to perform operation on product '+ value
+					});
+					
+				}
+				else {
+					checkbox.prop('checked', !checked);
+				}
+				
+			}
+			
+		});
+		
+	});
+	
+	
 	
 });
+	
+
+
+
+
+	
+	
+	
+	

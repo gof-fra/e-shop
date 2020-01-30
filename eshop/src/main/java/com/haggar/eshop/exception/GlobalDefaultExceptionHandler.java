@@ -14,9 +14,9 @@ public class GlobalDefaultExceptionHandler {
 		ModelAndView mv = new ModelAndView("error");
 		
 		
-		mv.addObject("errorTitle", "The page is not constructed");
+		mv.addObject("errorTitle", "The page is not constructed!");
 		
-		mv.addObject("errorDescription", "Page is not available");
+		mv.addObject("errorDescription", "Page is not available!");
 		
 		mv.addObject("title", "404 Error Page");
 		
