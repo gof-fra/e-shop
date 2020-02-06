@@ -776,7 +776,7 @@
 	<!-- //nav smooth scroll -->
 
 	<!-- popup modal (for location)-->
-	<script src="${js}/jquery.magnific-popup.js"></script>
+<%-- 	<script src="${js}/jquery.magnific-popup.js"></script>
 	<script>
 		$(document).ready(function () {
 			$('.popup-with-zoom-anim').magnificPopup({
@@ -792,7 +792,7 @@
 			});
 
 		});
-	</script>
+	</script> --%>
 	<!-- //popup modal (for location)-->
 
 	<!-- cart-js -->
@@ -869,9 +869,9 @@
 				easingType: 'linear' 
 			};
 			*/
-		 	$().UItoTop({
+	/* 	 	$().UItoTop({
 				easingType: 'easeOutQuart'
-			}); 
+			});  */
 
 		});
 	</script>
@@ -884,6 +884,7 @@
 	<script src="${js}/dataTables.bootstrap4.js"></script>
 	<script src="${js}/jquery-2.2.3.min.js"></script>
 	<script src="${js}/jquery.dataTables.js"></script>
+	<script src="${js}/bootbox.min.js"></script>
 	<!-- //for bootstrap working -->
 	<!-- //js-files -->
 

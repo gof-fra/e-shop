@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow
+                          http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
+       
+      <var name="user" class="com.haggar.eshopBackend.dto.User" />          
+                          
+                          
+      <view-state id="personal" view="flows/register/singup-personal" model="user">
+      	<transition on="billing" to="billing" />
+      </view-state>
+      
+      
+      <view-state id="billing" view="flows/register/singup-billing"></view-state>
+      
+      
+      <view-state id="confirm" view="flows/register/singup-confirm"></view-state>
+      
+      
+	  <end-state id="home" view="externalRedirect:contextRelative:/" />
+	  <end-state id="success" view="flows/register/singup-success" />
+								 
+	  <!-- Global transition -->
+	  <global-transitions>
+	  	<transition on="home" to="home" />
+	  </global-transitions>
+</flow>
+	

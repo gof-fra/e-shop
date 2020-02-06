@@ -72,30 +72,30 @@ CREATE TABLE product (
 
 
 INSERT INTO 
-product(code, name, brand, description, unit_price, quantity, is_active, category_id, supplier_id)
-VALUES('PRDABC123DEFX', 'iPhone 6', 'apple','The best phone available right now on the market', '900', '10', true, 3, 2);
+product(code, name, brand, description, unit_price, quantity, is_active, category_id, supplier_id, views, purchases)
+VALUES('PRDABC123DEFX', 'iPhone 6', 'apple','The best phone available right now on the market', '900', '10', true, 3, 2, 4, 1);
 
 
 INSERT INTO 
-product(code, name, brand, description, unit_price, quantity, is_active, category_id, supplier_id)
-VALUES('PRDDEF123DEFX', 'samsumg S7', 'Samsumg','The best phone available right now on the market', '950', '15', true, 3, 3);
+product(code, name, brand, description, unit_price, quantity, is_active, category_id, supplier_id, views, purchases)
+VALUES('PRDDEF123DEFX', 'samsumg S7', 'Samsumg','The best phone available right now on the market', '950', '15', true, 3, 3, 2, 1);
 
 
 INSERT INTO 
-product(code, name, brand, description, unit_price, quantity, is_active, category_id, supplier_id)
-VALUES('PRDQSFF177DECX', 'One+ ', 'ONE','The best phone', '1250', '5', true, 3, 2);
-
-
-
-INSERT INTO 
-product(code, name, brand, description, unit_price, quantity, is_active, category_id, supplier_id)
-VALUES('PRDDEF121OPMC', 'Mac OS', 'Apple','The best computer available right now on the market', '7950', '115', true, 1, 2);
+product(code, name, brand, description, unit_price, quantity, is_active, category_id, supplier_id, views, purchases)
+VALUES('PRDQSFF177DECX', 'One+ ', 'ONE','The best phone', '1250', '5', true, 3, 2, 7, 1);
 
 
 
 INSERT INTO 
-product(code, name, brand, description, unit_price, quantity, is_active, category_id, supplier_id)
-VALUES('PRDSLF9998DELZ', 'Dell Sa 10', 'Dell','The best computer available right now on the market', '3500', '75', true, 1, 3);
+product(code, name, brand, description, unit_price, quantity, is_active, category_id, supplier_id, views, purchases)
+VALUES('PRDDEF121OPMC', 'Mac OS', 'Apple','The best computer available right now on the market', '7950', '115', true, 1, 2, 2, 1);
+
+
+
+INSERT INTO 
+product(code, name, brand, description, unit_price, quantity, is_active, category_id, supplier_id, views, purchases)
+VALUES('PRDSLF9998DELZ', 'Dell Sa 10', 'Dell','The best computer available right now on the market', '3500', '75', true, 1, 3, 1, 1);
 
 
 CREATE TABLE address (

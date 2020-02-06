@@ -7,8 +7,9 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>eshop Maven Webapp</name>
   <url>http://maven.apache.org</url>
-  <dependencies>
   
+  <dependencies>
+  	<!-- link with backend project -->
   	<dependency>
   	  <groupId>com.haggar</groupId>
   	  <artifactId>eshopBackend</artifactId>
@@ -37,6 +38,16 @@
 	    <artifactId>spring-webmvc</artifactId>
 	    <version>5.2.2.RELEASE</version>
 	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/org.springframework.webflow/spring-webflow -->
+	<dependency>
+	    <groupId>org.springframework.webflow</groupId>
+	    <artifactId>spring-webflow</artifactId>
+	    <version>2.4.5.RELEASE</version>
+	</dependency>
+
+
+	
 	
 	<!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
 	<dependency>

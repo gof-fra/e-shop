@@ -72,6 +72,8 @@
 </head>
 
 <body>
+
+	
 	<!-- top-header -->
 	<!-- //navigation -->
 
@@ -177,7 +179,19 @@
 									items="${categories}"
 									itemLabel="name"
 									itemValue="id"	
-								/>																																	
+								/>		
+								
+								<c:if test="${product.id == 0}">
+								<br>
+								<div class="text-right">
+									<button type="button" data-toggle="modal" data-target="#myCategoryModal" class="btn btn-warning btn-xs">
+										Add Category
+									</button>
+								</div>
+								
+									
+								</c:if>
+																																							
 							</div>
 						</div>
 						
@@ -233,7 +247,7 @@
 							</tr>
 					</thead>
 					
-	     			<tbody>
+	     			<%--  <tbody>
 							<tr>
 								<td> 4 </td>
 								<td> 
@@ -252,11 +266,10 @@
 								<td> &#8377; 7950.00 /- </td>
 								
 								<td> 
-									<!-- toggle switch -->
 									<label class="switch">
-										<input type="checkbox" checked="checked" value="4"/>
-										<div class="slider"></div>
-									</label>
+							            <input type="checkbox" checked="checked" value="4" />
+							            <div class="slider"></div>
+							        </label>
 								</td>
 								
 								<td> 
@@ -288,11 +301,10 @@
 								<td> &#8377; 7950.00 /- </td>
 								
 								<td> 
-									<!-- toggle switch -->
-									<label class="switch">
-										<input type="checkbox"  value="4"/>
-										<div class="slider"></div>
-									</label>
+							        <label class="switch">
+							            <input type="checkbox" value="4" />
+							            <div class="slider"></div>
+							        </label>
 								</td>
 								
 								<td> 
@@ -305,8 +317,8 @@
 							</tr>
 							
 							
-					</tbody>  
-					
+					</tbody>   --%>
+					 
 					<tfoot>
 							<tr>
 								<th>ID</th>
@@ -327,8 +339,55 @@
 			</div>
 		</div>
 	</div>
+	
+	<!-- Adding a new category -->
+	<div class="modal fade" id="myCategoryModal" role="dialog" tabindex="-1">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span>&times;</span>
+						<h4 class="modal-title">Add New Category</h4>
+					</button>
+				</div>
+				<div class="modal-body">
+					<sf:form id="categoryForm" modelAttribute="category" action="${contextRoot}/manage/category"
+						method="POST" class="form-horizontal">
+						
+						<div class="form-group">
+							<label for="category_name" class="control-label col-md-4">Add Category Name</label>
+							<div class="col-md-8">
+								
+								<sf:input path="name" id="category_name" type="text" class="form-control"/>
+								
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label for="category_description" class="control-label col-md-4"> Category Description</label>
+							<div class="col-md-8">
+								
+								<sf:textarea cols="" row="5" path="description" type="text" id="category_description" class="form-control"/>
+								
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<div class="col-md-offset-4 col-md-8">
+								
+								<input type="submit" value="Add Category" class="btn btn-primary" />
+								
+							</div>
+						</div>
+						
+					</sf:form>	
+				</div>
+			</div>
+		</div>
+	</div>
 		
 	<hr>
+	
 
 	<!-- //first section -->
 	
@@ -356,7 +415,7 @@
 	<!-- //nav smooth scroll -->
 
 	<!-- popup modal (for location)-->
-	<script src="${js}/jquery.magnific-popup.js"></script>
+<%-- 	<script src="${js}/jquery.magnific-popup.js"></script>
 	<script>
 		$(document).ready(function () {
 			$('.popup-with-zoom-anim').magnificPopup({
@@ -372,7 +431,7 @@
 			});
 
 		});
-	</script>
+	</script> --%>
 	<!-- //popup modal (for location)-->
 
 	<!-- cart-js -->
@@ -493,9 +552,9 @@
 				easingType: 'linear' 
 			};
 			*/
-		 	$().UItoTop({
+		 	/* $().UItoTop({
 				easingType: 'easeOutQuart'
-			});
+			}); */
  
 		});
 	</script>
@@ -505,12 +564,12 @@
 	<script src="${js}/bootstrap.js"></script>
 	<script src="${js}/jquery-2.2.3.min.js"></script>
 	<script src="${js}/jquery.dataTables.js"></script>
-	<!-- //jquery -->
 	<script src="${js}/myapp.js"></script>
 	<script src="${js}/dataTables.bootstrap4.js"></script>
 	<script src="${js}/jquery.dataTables.js"></script>
 	<script src="${js}/bootbox.min.js"></script>
-	<script src="${js}/bootbox.js"></script>
+	<script src="${js}/jquery.validate.js"></script>
+	<script src="${js}/jquery.validate.min.js"></script>
 	<!-- //for bootstrap working -->
 	<!-- //js-files -->
 
