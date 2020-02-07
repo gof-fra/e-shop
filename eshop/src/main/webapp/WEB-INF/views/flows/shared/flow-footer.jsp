@@ -1,4 +1,4 @@
-<!-- footer -->
+<%-- <!-- footer -->
 		<%@ include file = "../../canal/footer.jsp" %>
 	<!-- //copyright -->
 
@@ -150,4 +150,4 @@
 
 </html>
 
- 
+  --%>
