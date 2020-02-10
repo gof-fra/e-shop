@@ -45,8 +45,6 @@
 	    <artifactId>spring-webflow</artifactId>
 	    <version>2.4.5.RELEASE</version>
 	</dependency>
-
-
 	
 	
 	<!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
@@ -70,9 +68,33 @@
 	    <version>1.2</version>
 	</dependency>
 	
-    
+	
+	<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-web -->
+	<dependency>
+	    <groupId>org.springframework.security</groupId>
+	    <artifactId>spring-security-web</artifactId>
+	    <version>5.2.1.RELEASE</version>
+	</dependency>
+	
+	
+	<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-config -->
+	<dependency>
+	    <groupId>org.springframework.security</groupId>
+	    <artifactId>spring-security-config</artifactId>
+	    <version>5.2.1.RELEASE</version>
+	</dependency>
+	
+	
+	<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-taglibs -->
+	<dependency>
+	    <groupId>org.springframework.security</groupId>
+	    <artifactId>spring-security-taglibs</artifactId>
+	    <version>5.2.1.RELEASE</version>
+	</dependency>
+
     
   </dependencies>
+  
   <build>
   	<plugins>
   		<!-- Latest version of java -->

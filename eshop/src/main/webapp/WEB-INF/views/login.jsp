@@ -2,7 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<%@taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
 
 <spring:url var="css" value="/resources/css"/>
 <spring:url var="js" value="/resources/js"/>
@@ -67,71 +66,35 @@
 
 <body>
 	<!-- navigation -->
-	<%@ include file = "../../canal/navbar.jsp" %>
+	<%@ include file = "./canal/navbar.jsp" %>
 	
-		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-			<div class="container">
-				<div class="navbar-header">
-					<a class="navbar-brand" href="${flowExecutionUrl}&_eventId_home"></a>
-				</div>
-			
-			</div>
-		
-		</nav>
-	<!-- //navigation -->
-		
 		<!-- Sing Up -->
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title">Register</h5>
+						<h5 class="modal-title">Login</h5>
 						
 					</div>
 					<div class="modal-body">
 						<sf:form 
-						action="#" 
+						action="${contextRoot}/login" 
 						method="POST"
 						class="form-horizontal"
-						id="registerForm"
-						modelAttribute="user"
+						id="loginForm"
 						>
 							<div class="form-group">
-								<label class="col-form-label">First Name</label> 
+								<label class="col-form-label">Email</label> 
 									<div class="col-md-8">
-								    	<sf:input type="text" path="firstName" class="form-control" placeholder="First Name"/>
+								    	<sf:input type="text" path="username" class="form-control" id="username"/>
 								    	<sf:errors path="firstName" cssClass="help-block" element="em" />
-									</div>
-							</div>
-							
-							<div class="form-group">
-								<label class="col-form-label">Last Name</label> 
-									<div class="col-md-8">
-										<sf:input type="text" path="lastName" class="form-control" placeholder="Last Name"/>
-										<sf:errors path="lastName" cssClass="help-block" element="em" />
-									</div>
-							</div>
-							
-							<div class="form-group">
-								<label class="col-form-label">Email </label> 
-									<div class="col-md-8">
-										<sf:input type="text" path="email" class="form-control" placeholder="Email"/>
-										<sf:errors path="email" cssClass="help-block" element="em" />
-									</div>
-							</div>
-							
-							<div class="form-group">
-								<label class="col-form-label">Phone number</label> 
-									<div class="col-md-8">
-										<sf:input type="text" path="contactNumber" class="form-control" placeholder="contact number"/>
-										<sf:errors path="contactNumber" cssClass="help-block" element="em" />
 									</div>
 							</div>
 							
 							<div class="form-group">
 								<label class="col-form-label">Password</label> 
 									<div class="col-md-8">
-										<sf:input type="password" path="password" class="form-control" placeholder="Password"/>
-										<sf:errors path="password" cssClass="help-block" element="em" />
+										<sf:input type="text" path="password" class="form-control" id="password"/>
+										<sf:errors path="lastName" cssClass="help-block" element="em" />
 									</div>
 							</div>
 							
@@ -143,31 +106,19 @@
 									</div>
 							</div>
 							
-							<div class="form-group">
-								<label class="col-form-label">Select role</label> 
-									<div class="col-md-8">
-										<label class="radio-inline">
-												<sf:radiobutton path="role" value="USER" checked="checked"/> User
-											
-										</label>
-										<label class="radio-inline">
-												<sf:radiobutton path="role" value="SUPPLIER" /> SUPPLIER
-											
-										</label>
-									</div>
-							</div>
-							
 							<div class="right-w3l">
 								
-								<button type=submit class="btn btn-primary" name="_eventId_billing">
-								
-									Next-Billing <span class="glyphicon glyphicon-chevron-right"></span>
-								
-								</button>
-								
-								
-								
+								<button type=submit class="btn btn-primary" value="Login" ></button>
+				
 							</div>
+							
+							<div>
+								<p class="text-center dont-do mt-3">
+									Don't have an account? <a href="#" data-toggle="modal"
+										data-target="#exampleModal2"> Register Now</a>
+								</p>
+							</div>
+							
 							<div class="sub-w3l">
 								<div class="custom-control custom-checkbox mr-sm-2">
 									<input type="checkbox" class="custom-control-input"
@@ -182,8 +133,9 @@
 			</div>
 		
 		<br><br><br><br>
+	
 	<!-- footer -->
-		<%@ include file = "../../canal/footer.jsp" %>
+		<%@ include file = "./canal/footer.jsp" %>
 	<!-- //copyright -->
 
 	<!-- js-files -->

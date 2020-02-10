@@ -276,9 +276,16 @@
 							Us</a></li>
 					<li class="nav-item mr-lg-2 mb-lg-0 mb-2" id="elect"><a
 						class="nav-link" href="${contextRoot}/contact" id="contact">Contact
-							Us</a></li>
-					<li class="nav-item mr-lg-2 mb-lg-0 mb-2" id="register">
-						<a class="nav-link" href="${contextRoot}/register">Sing Up</a>
+							Us</a>
+					</li>
+					<li>
+						<img src="${images}/5.png" alt=" " class="img-fluid" width="35" height="35"> 
+					</li>
+					<li class="nav-item mr-lg-2 mb-lg-0 mb-2" id="register">  
+							<a class="nav-link" href="${contextRoot}/register">Register</a>
+					</li>
+					<li>
+						<img src="${images}/5.png" alt=" " class="img-fluid" width="35" height="35"> 
 					</li>
 					<li class="nav-item mr-lg-2 mb-lg-0 mb-2" id="login">
 						<a class="nav-link" href="${contextRoot}/login">Login</a>

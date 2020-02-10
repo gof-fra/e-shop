@@ -99,6 +99,7 @@
 								<label class="col-form-label">Address Line One</label> 
 									<div class="col-md-8">
 								    	<sf:input type="text" path="addressLineOne" class="form-control" placeholder="address Line One"/>
+										<sf:errors path="addressLineOne" cssClass="help-block" element="em" />
 									</div>
 							</div>
 							
@@ -106,6 +107,7 @@
 								<label class="col-form-label">Address Line Two</label> 
 									<div class="col-md-8">
 										<sf:input type="text" path="addessLineTwo" class="form-control" placeholder="addess LineT wo"/>
+										<sf:errors path="addessLineTwo" cssClass="help-block" element="em" />
 									</div>
 							</div>
 							
@@ -113,6 +115,7 @@
 								<label class="col-form-label">City </label> 
 									<div class="col-md-8">
 										<sf:input type="text" path="city" class="form-control" placeholder="Enter the city Name"/>
+										<sf:errors path="city" cssClass="help-block" element="em" />
 									</div>
 							</div>
 							
@@ -120,6 +123,7 @@
 								<label class="col-form-label">Postal code</label> 
 									<div class="col-md-8">
 										<sf:input type="text" path="codePostal" class="form-control" placeholder="codeP ostal"/>
+										<sf:errors path="codePostal" cssClass="help-block" element="em" />
 									</div>
 							</div>
 							
@@ -127,6 +131,7 @@
 								<label class="col-form-label">Area</label> 
 									<div class="col-md-8">
 										<sf:input type="text" path="area" class="form-control" placeholder="area"/>
+										<sf:errors path="area" cssClass="help-block" element="em" />
 									</div>
 							</div>
 							
