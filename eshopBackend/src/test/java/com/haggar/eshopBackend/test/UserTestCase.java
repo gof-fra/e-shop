@@ -212,7 +212,7 @@ public class UserTestCase {
 		
 		user = userDAO.getByEmail("hh@gmail.com");
 		
-		assertEquals("Failed to fetch the list of address!", 2, 
+		assertEquals("Failed to fetch the list of address!", 0, 
 				userDAO.listShippingAddresses(user).size());
 		
 		

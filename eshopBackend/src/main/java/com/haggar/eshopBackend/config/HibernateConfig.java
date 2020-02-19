@@ -48,6 +48,7 @@ public class HibernateConfig {
 		return dataSource;
 		
 	}
+
 	
 	@Bean
 	public SessionFactory getSessionFactory(DataSource dataSource) {

@@ -67,9 +67,26 @@
 <body>
 	<!-- navigation -->
 	<%@ include file = "./canal/navbar.jsp" %>
+		
 	
 		<!-- Sing Up -->
 			<div class="modal-dialog" role="document">
+				
+				<c:if test="${not empty message }">
+				
+					<div class="row">
+						
+						<div class="col-md-offset-3 col-md-6">
+							
+							<div class="alert alert-danger">${message}</div>
+						
+						</div>
+					
+					</div>
+				
+				
+				</c:if>
+				
 				<div class="modal-content">
 					<div class="modal-header">
 						<h5 class="modal-title">Login</h5>
@@ -86,7 +103,7 @@
 								<label class="col-form-label">Email</label> 
 									<div class="col-md-8">
 								    	<sf:input type="text" path="username" class="form-control" id="username"/>
-								    	<sf:errors path="firstName" cssClass="help-block" element="em" />
+								    	
 									</div>
 							</div>
 							
@@ -94,21 +111,16 @@
 								<label class="col-form-label">Password</label> 
 									<div class="col-md-8">
 										<sf:input type="text" path="password" class="form-control" id="password"/>
-										<sf:errors path="lastName" cssClass="help-block" element="em" />
+										
 									</div>
 							</div>
 							
-							<div class="form-group">
-								<label class="col-form-label">Conform Password</label> 
-									<div class="col-md-8">
-										<sf:input type="password" path="confirmPassword" class="form-control" placeholder="Password again"/>
-										<sf:errors path="confirmPassword" cssClass="help-block" element="em" />
-									</div>
-							</div>
+							
 							
 							<div class="right-w3l">
 								
 								<button type=submit class="btn btn-primary" value="Login" ></button>
+								<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 				
 							</div>
 							

@@ -22,6 +22,23 @@ $(function() {
 	}
 	
 	
+	// token
+	var token = $('meta[name="_csrf"]').attr('content');
+	var header = $('meta[name="_csrf_header"]').attr('content');
+	
+	if(token.length > 0 && header.length > 0) {
+		
+		$(document).ajaxSend(function(e, xhr, options){
+		
+			xhr.setRequestHeader(header, token);
+			
+		});
+		
+	}
+	
+	
+	// ---------------
+	
 	var $table = $('#productListTable');
 	
 	if($table.length) {
@@ -337,6 +354,57 @@ $(function() {
 				description : {
 					
 					required: 'Please add the category description!'
+					
+				}
+				
+			},
+			errorElement : 'em',
+			errorPlacement: function(error, element) {
+				
+				// add the class of help-block
+				error.AddClass('help-block');
+				// add the error element after the input element
+				error.insertAfter(element);
+			}
+			
+		});
+		
+	}
+	 
+	
+	
+	// Login validation
+	var $loginForm = $('#loginForm');
+	
+	if($loginForm.length) {
+		
+		$loginForm.validate({
+			
+			rules : {
+				
+				username : {
+					
+					required: true,
+					email: true
+				},
+				password : {
+					
+					required: true
+				}
+			},
+			
+			messages : {
+				
+				username : {
+					
+					required: 'User name!',
+					minlength: 'Valide email!'
+					
+				},
+				
+				password : {
+					
+					required: 'Please add the password!'
 					
 				}
 				
