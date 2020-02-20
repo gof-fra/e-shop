@@ -107,16 +107,23 @@ $(function() {
 							
 							str += '<a href="'+window.contextRoot+ '/show/'+data+'/product" class="btn btn-primary"> View</a> &#160;';
 							
-							if(row.quantity < 1) {
+							if(userRole == 'ADMIN') {
+								 str += '<a href="'+window.contextRoot+ '/manage/'+data+'/product" class="btn btn-warning"> Edit</a>';							 
+							}
+							else{
 								
-								str += '<a href="javascript:void(0)" class="btn btn-success disabled"> Cart</a>';
+								if(row.quantity < 1) {
+									
+									str += '<a href="javascript:void(0)" class="btn btn-success disabled"> Cart</a>';
+									
+								}
+								else {	
+									str += '<a href="'+window.contextRoot+ '/cart/add/'+data+'/product" class="btn btn-success"> Cart</a>';
+								}
 								
 							}
-							else {
-								
-								str += '<a href="'+window.contextRoot+ '/cart/add/'+data+'/product" class="btn btn-success"> Cart</a>';
-								
-							}
+							
+							
 							
 							return str;
 							

@@ -24,7 +24,7 @@ CREATE TABLE user_detail (
         last_name VARCHAR(50),
         role VARCHAR(50),
         enabled BOOLEAN,
-        password VARCHAR(50),
+        password VARCHAR(60),
         email VARCHAR(100),
         contact_number VARCHAR(15),
         
@@ -35,17 +35,17 @@ CREATE TABLE user_detail (
 INSERT INTO 
 user_detail 
 (first_name, last_name, role, enabled, password, email, contact_number) 
-VALUES ('hachim', 'haggar', 'ADMIN', 'true', 'admin', 'hachim@gmail.com', '8989899');
+VALUES ('hachim', 'haggar', 'ADMIN', 'true', '$2a$10$1qlrJ0h2uK7AT3PKrDhigu8sqnC3bGwhzRxFk2chkFqYglxq.9g42', 'hachim@gmail.com', '8989899');
 
 INSERT INTO 
 user_detail 
 (first_name, last_name, role, enabled, password, email, contact_number) 
-VALUES ('edy', 'haggar', 'SUPPLIER', 'true', '12345', 'edy@gmail.com', '8888888');
+VALUES ('edy', 'haggar', 'SUPPLIER', 'true', '$2a$10$bZiJV.otZTz5O2fQ5DrSZ.FLzHoIkFU2drh6TcA2eKQNvgIlEVYZm', 'edy@gmail.com', '8888888');
 
 INSERT INTO 
 user_detail 
 (first_name, last_name, role, enabled, password, email, contact_number) 
-VALUES ('noury', 'haggar', 'SUPPLIER', 'true', '123456', 'noury@gmail.com', '3343367');
+VALUES ('noury', 'haggar', 'SUPPLIER', 'true', '$2a$10$bTvX4bDAP.t2laHhlENb7eRFQM8Jy8NxJd335nzWW6.EsCJZ22m/C', 'noury@gmail.com', '3343367');
 
 
 

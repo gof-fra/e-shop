@@ -1,12 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
-<spring:url var="css" value="/resources/css"/>
-<spring:url var="js" value="/resources/js"/>
-<spring:url var="images" value="/resources/images"/>
-<spring:url var="fonts" value="/resources/fonts"/>
+<spring:url var="css" value="/resources/css" />
+<spring:url var="js" value="/resources/js" />
+<spring:url var="images" value="/resources/images" />
 
 <c:set var="contextRoot" value="${pageContext.request.contextPath}" />
 
@@ -14,19 +13,11 @@
 <html lang="zxx">
 
 <head>
-	<title>Affrah - ${title} </title>
-	
-	<script type="text/javascript">
-	
-		window.menu = '${title}';
-		
-		window.contextRoot = '${contextRoot}'
-		
-	</script>
+	<title> Affrah Shop - ${title} </title>
 	<!-- Meta tag Keywords -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8" />
-	<meta name="keywords" content=""
+	<meta name="keywords" content="Electro Store Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design"
 	/>
 	<script>
 		addEventListener("load", function () {
@@ -49,10 +40,6 @@
 	<link href="${css}/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
 	<!-- pop-up-box -->
 	<link href="${css}/menu.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="${css}/dataTables.bootstrap4.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="${css}/jquery.dataTables.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="${css}/admin.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="${css}/myapp.css" rel="stylesheet" type="text/css" media="all" />
 	<!-- menu style -->
 	<!-- //Custom-Files -->
 
@@ -65,236 +52,120 @@
 </head>
 
 <body>
-	<!-- navigation -->
-	<%@ include file = "./canal/navbar.jsp" %>
+	<!-- top-header -->
+
+	<!-- banner-2 -->
+	<div class="page-head_agile_info_w3l">
+		<!-- watch & phone -->
+	</div>
+	<!-- //banner-2 -->
+	<!-- page -->
+	<div class="services-breadcrumb">
+		<div class="agile_inner_breadcrumb">
+			<div class="container">
+				<ul class="w3_short">
+					<li>
+						<a href="${contextRoot}/home">Home</a>
+						<i>|</i>
+					</li>
+					<li>Affrah shop</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
 		
-	
-		<!-- Sing Up -->
-			<div class="modal-dialog" role="document">
-				
-				<c:if test="${not empty message }">
-				
-					<div class="row">
-						
-						<div class="col-md-offset-3 col-md-6">
-							
-							<div class="alert alert-danger">${message}</div>
-						
-						</div>
-					
-					</div>
-				
-				
-				</c:if>
-				
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title">Login</h5>
-						
-					</div>
-					<div class="modal-body">
-						<sf:form 
-						action="${contextRoot}/login" 
-						method="POST"
-						class="form-horizontal"
-						id="loginForm"
-						>
-							<div class="form-group">
-								<label class="col-form-label">Email</label> 
-									<div class="col-md-8">
-								    	<sf:input type="text" path="username" class="form-control" id="username"/>
-								    	
-									</div>
-							</div>
-							
-							<div class="form-group">
-								<label class="col-form-label">Password</label> 
-									<div class="col-md-8">
-										<sf:input type="text" path="password" class="form-control" id="password"/>
-										
-									</div>
-							</div>
-							
-							
-							
-							<div class="right-w3l">
-								
-								<button type=submit class="btn btn-primary" value="Login" ></button>
-								<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-				
-							</div>
-							
-							<div>
-								<p class="text-center dont-do mt-3">
-									Don't have an account? <a href="#" data-toggle="modal"
-										data-target="#exampleModal2"> Register Now</a>
-								</p>
-							</div>
-							
-							<div class="sub-w3l">
-								<div class="custom-control custom-checkbox mr-sm-2">
-									<input type="checkbox" class="custom-control-input"
-										id="customControlAutosizing2"> <label
-										class="custom-control-label" for="customControlAutosizing2">I
-										Accept to the Terms & Conditions</label>
-								</div>
-							</div>
-						</sf:form>
+		<!-- Page Content -->
+
+		<div class="content">
+			
+   <div class="container">
+    
+		   	<c:if test="${not empty message}">
+				<div class="row">
+					<div class="col-xs-12 col-md-offset-2 col-md-8">
+						<div class="alert alert-danger fade in">${message}</div>
 					</div>
 				</div>
-			</div>
+			</c:if>
+		         
+		   	<c:if test="${not empty logout}">
+				<div class="row">
+					<div class="col-xs-12 col-md-offset-2 col-md-8">
+						<div class="alert alert-success">${logout}</div>
+					</div>
+				</div>
+			</c:if>
+		       
+		    <div class="row">
+		     
+		     <div class="col-md-offset-3 col-md-6">
+		      
+		      <div class="panel panel-primary">
+		       
+		       <div class="panel-heading">
+		        <h4>Login</h4>
+		       </div>
+		       
+		       <div class="panel-body">
+			        <form action="${contextRoot}/login" method="POST" class="form-horizontal"
+			         id="loginForm"
+			        >
+			         <div class="form-group">
+			          <label for="username" class="col-md-4 control-label">Email: </label>
+			          <div class="col-md-8">
+			           <input type="text" name="username" id="username" class="form-control"/>
+			          </div>
+			         </div>
+			         <div class="form-group">
+			          <label for="password" class="col-md-4 control-label">Password: </label>
+			          <div class="col-md-8">
+			           <input type="password" name="password" id="password" class="form-control"/>
+			          </div>
+			         </div>
+			         <div class="form-group">
+			          <div class="col-md-offset-4 col-md-8">
+			           <input type="hidden"  name="${_csrf.parameterName}"   value="${_csrf.token}"/>
+			           <input type="submit" value="Login" class="btn btn-primary"/>
+			          </div>
+			         </div>
+		        </form>
+		       
+		       </div>
+		       <div class="panel-footer">
+		       	<div class="text-right">
+		       		New User - <a href="${contextRoot}/register">Register Here</a>
+		       	</div>
+		       </div>
+		      <br><br><br>
+		      </div> 
+		    
+		     </div>
+		     
+		    </div>    
+		   
+  		 </div>
+
+			
+		</div>
+
+
+		<!-- Footer comes here -->
+		<%@include file="./canal/footer.jsp"%>
+
+		<!-- jQuery -->
+		<script src="${js}/jquery.js"></script>
+
+		<script src="${js}/jquery.validate.js"></script>
+
+		<!-- Bootstrap Core JavaScript -->
+		<script src="${js}/bootstrap.min.js"></script>
 		
-		<br><br><br><br>
+		<!-- Self coded javascript -->
+		<script src="${js}/myapp.js"></script>
+
 	
-	<!-- footer -->
-		<%@ include file = "./canal/footer.jsp" %>
-	<!-- //copyright -->
 
-	<!-- js-files -->
-	<!-- jquery -->
-	<script src="${js}/jquery-2.2.3.min.js"></script>
-	<!-- //jquery -->
-
-	<!-- nav smooth scroll -->
-	<script>
-		$(document).ready(function () {
-			$(".dropdown").hover(
-				function () {
-					$('.dropdown-menu', this).stop(true, true).slideDown("fast");
-					$(this).toggleClass('open');
-				},
-				function () {
-					$('.dropdown-menu', this).stop(true, true).slideUp("fast");
-					$(this).toggleClass('open');
-				}
-			);
-		});
-	</script>
-	<!-- //nav smooth scroll -->
-
-	<!-- popup modal (for location)-->
-<%-- 	<script src="${js}/jquery.magnific-popup.js"></script>
-	<script>
-		$(document).ready(function () {
-			$('.popup-with-zoom-anim').magnificPopup({
-				type: 'inline',
-				fixedContentPos: false,
-				fixedBgPos: true,
-				overflowY: 'auto',
-				closeBtnInside: true,
-				preloader: false,
-				midClick: true,
-				removalDelay: 300,
-				mainClass: 'my-mfp-zoom-in'
-			});
-
-		});
-	</script> --%>
-	<!-- //popup modal (for location)-->
-
-	<!-- cart-js -->
-	<script src="${js}/minicart.js"></script>
-	<script>
-		paypals.minicarts.render(); //use only unique class names other than paypals.minicarts.Also Replace same class name in css and minicart.min.js
-
-		paypals.minicarts.cart.on('checkout', function (evt) {
-			var items = this.items(),
-				len = items.length,
-				total = 0,
-				i;
-
-			// Count the number of each item in the cart
-			for (i = 0; i < len; i++) {
-				total += items[i].get('quantity');
-			}
-
-			if (total < 3) {
-				alert('The minimum order quantity is 3. Please add more to your shopping cart before checking out');
-				evt.preventDefault();
-			}
-		});
-	</script>
-	<!-- //cart-js -->
-
-	<!-- password-script -->
-	<script>
-		window.onload = function () {
-			document.getElementById("password1").onchange = validatePassword;
-			document.getElementById("password2").onchange = validatePassword;
-		}
-
-		function validatePassword() {
-			var pass2 = document.getElementById("password2").value;
-			var pass1 = document.getElementById("password1").value;
-			if (pass1 != pass2)
-				document.getElementById("password2").setCustomValidity("Passwords Don't Match");
-			else
-				document.getElementById("password2").setCustomValidity('');
-			//empty string means no validation error
-		}
-	</script>
-	<!-- //password-script -->
-	
-	<!-- scroll seller -->
-	<script src="${js}/scroll.js"></script>
-	<!-- //scroll seller -->
-
-	<!-- smoothscroll -->
-	<script src="${js}/SmoothScroll.min.js"></script>
-	<!-- //smoothscroll -->
-
-	<!-- start-smooth-scrolling -->
-	<script src="${js}/move-top.js"></script>
-	<script src="${js}/easing.js"></script>
-	<script>
-		jQuery(document).ready(function ($) {
-			$(".scroll").click(function (event) {
-				event.preventDefault();
-
-				$('html,body').animate({
-					scrollTop: $(this.hash).offset().top
-				}, 1000);
-			});
-		});
-	</script>
-	<!-- //end-smooth-scrolling -->
-
-	<!-- smooth-scrolling-of-move-up -->
-	<script>
-		$(document).ready(function () {
-			/*
-			var defaults = {
-				containerID: 'toTop', // fading element id
-				containerHoverID: 'toTopHover', // fading element hover id
-				scrollSpeed: 1200,
-				easingType: 'linear' 
-			};
-			*/
-		/* 	$().UItoTop({
-				easingType: 'easeOutQuart'
-			}); 
- */
-		});
-	</script>
-	<!-- //smooth-scrolling-of-move-up -->
-
-	<!-- for bootstrap working -->
-	<script src="${js}/bootstrap.js"></script>
-	<!-- //for bootstrap working -->
-	<!-- //js-files -->
-	
-	<!-- js-files -->
-	<!-- jquery -->
-	<script src="${js}/jquery-2.2.3.min.js"></script>
-	<script src="${js}/jquery.dataTables.js"></script>
-	<script src="${js}/myapp.js"></script>
-	<script src="${js}/dataTables.bootstrap4.js"></script>
-	<script src="${js}/jquery.dataTables.js"></script>
-	<script src="${js}/bootbox.min.js"></script>
-	<script src="${js}/jquery.validate.js"></script>
-	<script src="${js}/jquery.validate.min.js"></script>
-	
 </body>
 
 </html>
-

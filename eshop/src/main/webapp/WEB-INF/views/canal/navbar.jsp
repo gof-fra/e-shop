@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
+<%@taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
@@ -27,25 +28,27 @@
 							<!-- <i class="fas mr-2"></i> -->
 
 					</a></li>
+					
+					
+					<li id="login" class="text-center border-right text-white"><a href="${contextRoot}/login"
+						data-toggle="modal" data-target="#exampleModal" class="text-white">
+							<%-- <img src="${images}/5.png" alt=" " class="img-fluid" width="30" height="30"> <i
+							class="fas mr-2"></i> Log In --%>
+					</a></li>
+					
 					<li class="text-center border-right text-white"><a
 						class="play-icon popup-with-zoom-anim text-white"
 						href="#small-dialog1"> <i class="fas mr-2"></i> Location <img
 							src="${images}/3.png" alt=" " class="img-fluid" width="30" height="30">
 					</a></li>
+					
+					<li class="text-center border-right text-white"><a> <i
+							class="fas mr-2"></i> 60 95 19 00 <img src="${images}/4.png"
+							alt=" " class="img-fluid" width="30" height="30">
+					</a></li>
 					<li class="text-center border-right text-white"><a> <i
 							class="fas mr-2"></i> 92 95 19 00 <img src="${images}/4.png"
 							alt=" " class="img-fluid" width="30" height="30">
-					</a></li>
-					<li id="login" class="text-center border-right text-white"><a href="${contextRoot}/login"
-						data-toggle="modal" data-target="#exampleModal" class="text-white">
-							<img src="${images}/5.png" alt=" " class="img-fluid" width="30" height="30"> <i
-							class="fas mr-2"></i> Log In
-					</a></li>
-					<li id="login" class="text-center text-white"><a href="${contextRoot}/regsiter"
-						data-toggle="modal" data-target="#exampleModal2"
-						class="text-white"> <img src="${images}/6.png" alt=" "
-							class="img-fluid" width="30" height="30"> <i class="fas mr-2"></i>Register
-
 					</a></li>
 				</ul>
 				<!-- //header lists -->
@@ -158,7 +161,7 @@
 					</div>
 					<!-- //search -->
 					<!-- cart details -->
-					<div class="col-2 top_nav_right text-center mt-sm-0 mt-2">
+					<%-- <div class="col-2 top_nav_right text-center mt-sm-0 mt-2">
 						<div class="wthreecartaits wthreecartaits2 cart cart box_1">
 							<form action="#" method="post" class="last">
 								<input type="hidden" name="cmd" value="_cart"> <input
@@ -169,7 +172,7 @@
 								</button>
 							</form>
 						</div>
-					</div>
+					</div> --%>
 					<!-- //cart details -->
 				</div>
 			</div>
@@ -263,8 +266,10 @@
 											</li>
 											<li><a href="${contextRoot}/payment" id="payment">Payment</a>
 											</li>
-											<li><a href="${contextRoot}/manage/products"
-												id="manageProducts">Manage</a></li>
+											<security:authorize access="hasAuthority('ADMIN')">
+												<li><a href="${contextRoot}/manage/products"
+													id="manageProducts">Manage</a></li>
+											</security:authorize>
 										</ul>
 									</div>
 								</div>
@@ -278,20 +283,60 @@
 						class="nav-link" href="${contextRoot}/contact" id="contact">Contact
 							Us</a>
 					</li>
-					<li>
-						<img src="${images}/5.png" alt=" " class="img-fluid" width="35" height="35"> 
-					</li>
-					<li class="nav-item mr-lg-2 mb-lg-0 mb-2" id="register">  
-							<a class="nav-link" href="${contextRoot}/register">Register</a>
-					</li>
-					<li>
-						<img src="${images}/5.png" alt=" " class="img-fluid" width="35" height="35"> 
-					</li>
-					<li class="nav-item mr-lg-2 mb-lg-0 mb-2" id="login">
-						<a class="nav-link" href="${contextRoot}/login">Login</a>
-					</li>
+					<security:authorize access="isAnonymous()">
+						<li>
+							<img src="${images}/5.png" alt=" " class="img-fluid" width="35" height="35"> 
+						</li>
+						<li class="nav-item mr-lg-2 mb-lg-0 mb-2" id="register">  
+								<a class="nav-link" href="${contextRoot}/register">Register</a>
+						</li>
+						<li>
+							<img src="${images}/5.png" alt=" " class="img-fluid" width="35" height="35"> 
+						</li>
+						<li class="nav-item mr-lg-2 mb-lg-0 mb-2" id="login">
+							<a class="nav-link" href="${contextRoot}/login">Login</a>
+						</li>
+					</security:authorize>
+					
+					<security:authorize access="isAuthenticated()">
+						<li class="dropdown">
+							<a href="javascript:void(0)"
+							class="btn btn-default dropdown-toggle"
+							id="dropdownMenu1"
+							data-toggle="dropdown">
+								
+								
+								${userModel.fullName}
+								<span class="caret"></span>
+								
+							</a>
+							
+							<ul class="dropdown-menu">
+								<security:authorize access="hasAuthority('USER')">
+									<li>
+										<a href="${contextRoot}/cart">
+											<span class="glyphicon glyphicon-shopping-cart"></span>
+											<span class="badge">${userModel.cart.carteLine}</span>
+											-&#8377; ${userModel.cart.grandTotal}
+										</a>
+									</li>
+									<li class="divider" role="separator"></li>
+								</security:authorize>
+								<li>
+									<a href="${contextRoot}/perform-logout">Logout</a>
+								</li>
+							
+							</ul>
+							
+						</li>
+					</security:authorize>
 				</ul>
 			</div>
 		</nav>
+		<script type="text/javascript">
+			
+			window.userRole = '${userModel.role}';
+		
+		</script>
 	</div>
 </div>

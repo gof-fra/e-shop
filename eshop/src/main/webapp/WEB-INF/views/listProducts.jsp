@@ -30,6 +30,8 @@
 			window.scrollTo(0, 1);
 		}
 	</script>
+	
+
 	<!-- //Meta tag Keywords -->
 
 	<!-- Custom-Files -->
@@ -59,6 +61,13 @@
 		.dataTableImg {
 			width: 50px;
 			height: 50px;
+		}
+	</style>
+	
+	
+	<style type="text/css">
+		.table-responsive {
+			overflow-x: inherit;
 		}
 	</style>
 
@@ -492,31 +501,40 @@
 						<br>
 						<hr>
 						<div>
-							<table id="productListTable" class="table table-striped table bordered">
-					
-								<thead>
-									<tr>
-										<th></th>
-										<th>Name</th>
-										<th>Brand</th>
-										<th>Price</th>
-										<th>Qty</th>
-										<th></th>
-									</tr>
-								</thead>
-								
-								<tfoot>
-									<tr>
-										<th></th>
-										<th>Name</th>
-										<th>Brand</th>
-										<th>Price</th>
-										<th>Qty</th>
-										<th></th>
-									</tr>
-								</tfoot>
 							
-							</table>
+							<div class="container-fluid">
+							
+								<div class="table-responsive">
+								
+									<table id="productListTable" class="table table-striped table bordered">
+					
+										<thead>
+											<tr>
+												<th></th>
+												<th>Name</th>
+												<th>Brand</th>
+												<th>Price</th>
+												<th>Qty</th>
+												<th></th>
+											</tr>
+										</thead>
+										
+										<tfoot>
+											<tr>
+												<th></th>
+												<th>Name</th>
+												<th>Brand</th>
+												<th>Price</th>
+												<th>Qty</th>
+												<th></th>
+											</tr>
+										</tfoot>
+									
+									</table>
+										
+								
+								</div>
+							</div>
 						</div>
 						<hr>
 						

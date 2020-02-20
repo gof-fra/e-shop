@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
 	
 
@@ -182,8 +183,10 @@
 								/>		
 								
 								<c:if test="${product.id == 0}">
+								
 								<br>
 								<div class="text-right">
+									
 									<button type="button" data-toggle="modal" data-target="#myCategoryModal" class="btn btn-warning btn-xs">
 										Add Category
 									</button>
@@ -231,110 +234,115 @@
 		<div class="agileinfo-ads-display col-lg-12">
 		  <div class="wrapper">
 			<div class="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mb-4">	
-				<div style="overflow:auto">
-					<table id="adminProductsTable" class="table table-striped table-bordered">
-				
-					<thead>
-							<tr>
-								<th>ID</th>
-								<th>&#160;</th>
-								<th>Name</th>
-								<th>Brand</th>
-								<th>Quantity</th>
-								<th>Unit Price</th>
-								<th>Active</th>
-								<th>Edit</th>
-							</tr>
-					</thead>
+				<div class="container-fluid">
 					
-	     			<%--  <tbody>
-							<tr>
-								<td> 4 </td>
-								<td> 
-									
-									<img class="adminDatatableImg" src="${contextRoot}/resources/images/PRDDEF121OPMC.jpg"
-									alt="Mac OS" />
-									
-								</td>
-								
-								<td> Mac OS</td>
-								
-								<td>Apple</td>
-								
-								<td> 115 </td>  <!-- 3 quantity -->
-								
-								<td> &#8377; 7950.00 /- </td>
-								
-								<td> 
-									<label class="switch">
-							            <input type="checkbox" checked="checked" value="4" />
-							            <div class="slider"></div>
-							        </label>
-								</td>
-								
-								<td> 
-									
-									<a href="${contextRoot}/manage/4/product" class="btn btn-warning">
-										<span class="glyphicon glyphicon-pencil"></span>
-									</a>
-									
-								</td>
-							</tr>
-							
-							<!-- ------- -->
-							
-							<tr>
-								<td> 4 </td>
-								<td> 
-									
-									<img class="adminDatatableImg" src="${contextRoot}/resources/images/PRDDEF121OPMC.jpg"
-									alt="Mac OS" />
-									
-								</td>
-								
-								<td> Mac OS</td>
-								
-								<td>Apple</td>
-								
-								<td> 115 </td>
-								
-								<td> &#8377; 7950.00 /- </td>
-								
-								<td> 
-							        <label class="switch">
-							            <input type="checkbox" value="4" />
-							            <div class="slider"></div>
-							        </label>
-								</td>
-								
-								<td> 
-									
-									<a href="${contextRoot}/manage/4/product" class="btn btn-warning">
-										<span class="glyphicon glyphicon-pencil"></span>
-									</a>
-									
-								</td>
-							</tr>
-							
-							
-					</tbody>   --%>
-					 
-					<tfoot>
-							<tr>
-								<th>ID</th>
-								<th>&#160;</th>
-								<th>Name</th>
-								<th>Brand</th> 
-								<th>Quantity</th>
-								<th>Unit Price</th>
-								<th>Active</th>
-								<th>Edit</th>
-							</tr>
-					</tfoot>
+					<div class="table-responsive">
+						<table id="adminProductsTable" class="table table-striped table-bordered">
 				
+							<thead>
+									<tr>
+										<th>ID</th>
+										<th>&#160;</th>
+										<th>Name</th>
+										<th>Brand</th>
+										<th>Quantity</th>
+										<th>Unit Price</th>
+										<th>Active</th>
+										<th>Edit</th>
+									</tr>
+							</thead>
+							
+			     			<%--  <tbody>
+									<tr>
+										<td> 4 </td>
+										<td> 
+											
+											<img class="adminDatatableImg" src="${contextRoot}/resources/images/PRDDEF121OPMC.jpg"
+											alt="Mac OS" />
+											
+										</td>
+										
+										<td> Mac OS</td>
+										
+										<td>Apple</td>
+										
+										<td> 115 </td>  <!-- 3 quantity -->
+										
+										<td> &#8377; 7950.00 /- </td>
+										
+										<td> 
+											<label class="switch">
+									            <input type="checkbox" checked="checked" value="4" />
+									            <div class="slider"></div>
+									        </label>
+										</td>
+										
+										<td> 
+											
+											<a href="${contextRoot}/manage/4/product" class="btn btn-warning">
+												<span class="glyphicon glyphicon-pencil"></span>
+											</a>
+											
+										</td>
+									</tr>
+									
+									<!-- ------- -->
+									
+									<tr>
+										<td> 4 </td>
+										<td> 
+											
+											<img class="adminDatatableImg" src="${contextRoot}/resources/images/PRDDEF121OPMC.jpg"
+											alt="Mac OS" />
+											
+										</td>
+										
+										<td> Mac OS</td>
+										
+										<td>Apple</td>
+										
+										<td> 115 </td>
+										
+										<td> &#8377; 7950.00 /- </td>
+										
+										<td> 
+									        <label class="switch">
+									            <input type="checkbox" value="4" />
+									            <div class="slider"></div>
+									        </label>
+										</td>
+										
+										<td> 
+											
+											<a href="${contextRoot}/manage/4/product" class="btn btn-warning">
+												<span class="glyphicon glyphicon-pencil"></span>
+											</a>
+											
+										</td>
+									</tr>
+									
+									
+							</tbody>   --%>
+							 
+							<tfoot>
+									<tr>
+										<th>ID</th>
+										<th>&#160;</th>
+										<th>Name</th>
+										<th>Brand</th> 
+										<th>Quantity</th>
+										<th>Unit Price</th>
+										<th>Active</th>
+										<th>Edit</th>
+									</tr>
+							</tfoot>
+						
+						
+						</table>
+					</div>
 				
-				</table>
-				</div>	
+				</div>
+					
 			  </div>
 			</div>
 		</div>

@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 
 <spring:url var="css" value="/resources/css" />
 <spring:url var="js" value="/resources/js" />
@@ -125,20 +126,30 @@
 						
 					</c:choose>
 					<br>
-					<c:choose>
-						<c:when test="${product.quantity < 1}">
-							<a href="javascript:void(0)" class="btn btn-success disabled"> <strike>
-								<span class="glyphicon glyphicon-shopping-cart">Add to cart</strike></span>
-							</a>
-						</c:when>
+					<security:authorize access="hasAuthority('USER')">
+						<c:choose>
+							<c:when test="${product.quantity < 1}">
+								<a href="javascript:void(0)" class="btn btn-success disabled"> <strike>
+									<span class="glyphicon glyphicon-shopping-cart">Add to cart</strike></span>
+								</a>
+							</c:when>
+							
+							<c:otherwise>
+								<a href="${contextRoot}/cart/add/${product.id}/product" class="btn btn-success">
+								<span class="glyphicon glyphicon-shopping-cart">Add to cart</span>
+								</a>
+							</c:otherwise>
+							
+						</c:choose>
+					</security:authorize>
+					
+					<security:authorize access="hasAuthority('ADMIN')">
 						
-						<c:otherwise>
-							<a href="${contextRoot}/cart/add/${product.id}/product" class="btn btn-success">
-							<span class="glyphicon glyphicon-shopping-cart">Add to cart</span>
-							</a>
-						</c:otherwise>
-						
-					</c:choose>
+						<a href="${contextRoot}/manage/${product.id}/product" class="btn btn-warning">
+								<span class="glyphicon glyphicon-pencil">Edit</span>
+								</a>
+					
+					</security:authorize>
 					
 					<hr>
 				
