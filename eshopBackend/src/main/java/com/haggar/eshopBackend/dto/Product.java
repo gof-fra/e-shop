@@ -1,6 +1,7 @@
 package com.haggar.eshopBackend.dto;
 
 
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 import javax.persistence.Column;
@@ -22,21 +23,38 @@ public class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+	
 	private String code;
 	
-	@NotBlank(message = "Please enter the product name")
+	
+	private LocalDateTime created;
+	
+	public LocalDateTime getCreated() {
+		return created;
+	}
+
+
+
+	public void setCreated(LocalDateTime created) {
+		this.created = created;
+	}
+
+
+	@NotBlank(message = "Le nom du produit est obligatoire!")
 	private String name;
 	
-	@NotBlank(message = "Please enter the brand name")
+	@NotBlank(message = "Entrez votre contact!")
 	private String brand;
 	
 	@JsonIgnore
-	@NotBlank(message = "Please enter the product description")
+	@NotBlank(message = "La descrition est obligatoire!")
 	private String description; 
 	
 	@Column(name = "unit_price")
-	@Min(value=1, message="Can't be less than 1")
+	@Min(value=1, message="Le prix un peut etre inferieur a 1!")
 	private double unitPrice;
+	
+	@Min(value=1, message="La quantite ne peut etre inferieur a 1!")
 	private int quantity;
 	
 	@Column(name = "is_active")
@@ -70,7 +88,7 @@ public class Product {
 
 	public Product() {
 		
-		this.code = "PRD" + UUID.randomUUID().toString().substring(26).toUpperCase();
+		 this.code = "PRD" + UUID.randomUUID().toString().substring(26).toUpperCase();
 		
 	}
 	
@@ -152,7 +170,7 @@ public class Product {
 
 	@Override
 	public String toString() {
-		return "Product [id=" + id + ", code=" + code + ", name=" + name + ", brand=" + brand + ", description="
+		return "Product [id=" + id + ", code=" + code + ", name=" + name + " , created=" + created + ", brand=" + brand + ", description="
 				+ description + ", unitPrice=" + unitPrice + ", quantity=" + quantity + ", activate=" + activate
 				+ ", categoryId=" + categoryId + ", supplierId=" + supplierId + ", purchases=" + purchases + ", views="
 				+ views + "]";

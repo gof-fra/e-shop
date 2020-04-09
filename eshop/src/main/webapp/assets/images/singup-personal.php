@@ -1,25 +1,33 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
 
-<spring:url var="css" value="/resources/css" />
-<spring:url var="js" value="/resources/js" />
-<spring:url var="images" value="/resources/images" />
-
+<spring:url var="css" value="/resources/css"/>
+<spring:url var="js" value="/resources/js"/>
+<spring:url var="images" value="/resources/images"/>
+<spring:url var="fonts" value="/resources/fonts"/>
 
 <c:set var="contextRoot" value="${pageContext.request.contextPath}" />
-
 
 <!DOCTYPE html>
 <html lang="zxx">
 
 <head>
-	<title>Affrah</title>
+	<title>Affrah - ${title} </title>
+	
+	<script type="text/javascript">
+	
+		window.menu = '${title}';
+		
+		window.contextRoot = '${contextRoot}'
+		
+	</script>
 	<!-- Meta tag Keywords -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8" />
-	<meta name="keywords" content="Electro Store Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design"
+	<meta name="keywords" content=""
 	/>
 	<script>
 		addEventListener("load", function () {
@@ -30,8 +38,6 @@
 			window.scrollTo(0, 1);
 		}
 	</script>
-	
-
 	<!-- //Meta tag Keywords -->
 
 	<!-- Custom-Files -->
@@ -44,11 +50,11 @@
 	<link href="${css}/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
 	<!-- pop-up-box -->
 	<link href="${css}/menu.css" rel="stylesheet" type="text/css" media="all" />
-	<!-- menu style -->
 	<link href="${css}/dataTables.bootstrap4.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="${css}/jquery.dataTables.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="${css}/admin.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="${css}/myapp.css" rel="stylesheet" type="text/css" media="all" />
+	<!-- menu style -->
 	<!-- //Custom-Files -->
 
 	<!-- web fonts -->
@@ -56,144 +62,129 @@
 	<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
 	    rel="stylesheet">
 	<!-- //web fonts -->
-	
-	<style type="text/css">
-		.dataTableImg {
-			width: 50px;
-			height: 50px;
-		}
-	</style>
-	
-	
-	<style type="text/css">
-		.table-responsive {
-			overflow-x: inherit;
-		}
-	</style>
-
 
 </head>
 
 <body>
-
-
-	<!-- banner-2 -->
-	<div class="page-head_agile_info_w3l">
-
-	</div>
-	<!-- //banner-2 -->
-	<!-- page -->
-	<div class="services-breadcrumb">
-		<div class="agile_inner_breadcrumb">
-			
-				<div class="container">
-				<c:if test="${userClickAllProducts == true}">
-				
-					<script type="text/javascript">
-						window.categoryId = ''; 
-					</script>
-					
-					<ul class="w3_short">
-						<li>
-							<a href="${contextRoot}/home">Home</a>
-							<i>|</i>
-						</li>
-						<li>Electronics</li>
-					</ul>
-				</c:if>
-				
-				<c:if test="${userClickCategorylProducts == true}">
-				
-					<script type="text/javascript">
-						window.categoryId = '${category.id}'; 
-					</script>
-					
-					<ul class="w3_short">
-						<li>
-							<a href="${contextRoot}/home">Home</a>
-							<i>|</i>
-						</li>
-						<li class="active">Category
-						<i>|</i>
-						</li>
-						<li class="active">${category.name}</li>
-					</ul>
-				</c:if>
+	<!-- navigation -->
+	<%@ include file = "../../canal/navbar.jsp" %>
+	
+		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="${flowExecutionUrl}&_eventId_home"></a>
 				</div>
 			
-		</div>
-	</div>
-	<!-- //page -->
-
-	<!-- top Products -->
-	<div class="ads-grid py-sm-5 py-4">
-		<div class="container py-xl-4 py-lg-2">
-			<!-- tittle heading -->
-			<h3 class="tittle-w3l text-center mb-lg-5 mb-sm-4 mb-3">
-				<span>P</span>roduits
-				<span>D</span>isponible</h3>
-			<!-- //tittle heading -->
-			<div class="row">
-				<!-- product left -->
-				
-				<div class="agileinfo-ads-display col-lg-12">
-					<div class="wrapper">
-
-						<br>
-						<hr>
-						<div>
+			</div>
+		
+		</nav>
+	<!-- //navigation -->
+		
+		<!-- Sing Up -->
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Register</h5>
+						
+					</div>
+					<div class="modal-body">
+						<sf:form 
+						action="#" 
+						method="POST"
+						class="form-horizontal"
+						id="registerForm"
+						modelAttribute="user"
+						>
+							<div class="form-group">
+								<label class="col-form-label">First Name</label> 
+									<div class="col-md-8">
+								    	<sf:input type="text" path="firstName" class="form-control" placeholder="First Name"/>
+								    	<sf:errors path="firstName" cssClass="help-block" element="em" />
+									</div>
+							</div>
 							
-							<div class="container-fluid">
+							<div class="form-group">
+								<label class="col-form-label">Last Name</label> 
+									<div class="col-md-8">
+										<sf:input type="text" path="lastName" class="form-control" placeholder="Last Name"/>
+										<sf:errors path="lastName" cssClass="help-block" element="em" />
+									</div>
+							</div>
 							
-								<div class="table-responsive">
+							<div class="form-group">
+								<label class="col-form-label">Email </label> 
+									<div class="col-md-8">
+										<sf:input type="text" path="email" class="form-control" placeholder="Email"/>
+										<sf:errors path="email" cssClass="help-block" element="em" />
+									</div>
+							</div>
+							
+							<div class="form-group">
+								<label class="col-form-label">Phone number</label> 
+									<div class="col-md-8">
+										<sf:input type="text" path="contactNumber" class="form-control" placeholder="contact number"/>
+										<sf:errors path="contactNumber" cssClass="help-block" element="em" />
+									</div>
+							</div>
+							
+							<div class="form-group">
+								<label class="col-form-label">Password</label> 
+									<div class="col-md-8">
+										<sf:input type="password" path="password" class="form-control" placeholder="Password"/>
+										<sf:errors path="password" cssClass="help-block" element="em" />
+									</div>
+							</div>
+							
+							<div class="form-group">
+								<label class="col-form-label">Conform Password</label> 
+									<div class="col-md-8">
+										<sf:input type="password" path="confirmPassword" class="form-control" placeholder="Password again"/>
+										<sf:errors path="confirmPassword" cssClass="help-block" element="em" />
+									</div>
+							</div>
+							
+							<div class="form-group">
+								<label class="col-form-label">Select role</label> 
+									<div class="col-md-8">
+										<label class="radio-inline">
+												<sf:radiobutton path="role" value="USER" checked="checked"/> User
+											
+										</label>
+										<label class="radio-inline">
+												<sf:radiobutton path="role" value="SUPPLIER" /> SUPPLIER
+											
+										</label>
+									</div>
+							</div>
+							
+							<div class="right-w3l">
 								
-									<table id="productListTable" class="table table-striped table bordered">
-					
-										<thead>
-											<tr>
-												<th></th>
-												<th>Nom</th>
-												<th>Contact</th>
-												<th>Prix</th>
-												<th>Quantité</th>
-												<th></th>
-											</tr>
-										</thead>
-										
-										<tfoot>
-											<tr>
-												<th></th>
-												<th>Nom</th>
-												<th>Contact</th>
-												<th>Prix</th>
-												<th>Quantité</th>
-												<th></th>
-											</tr>
-										</tfoot>
-									
-									</table>
-										
+								<button type=submit class="btn btn-primary" name="_eventId_billing">
 								
+									Next-Billing <span class="glyphicon glyphicon-chevron-right"></span>
+								
+								</button>
+								
+								
+								
+							</div>
+							<div class="sub-w3l">
+								<div class="custom-control custom-checkbox mr-sm-2">
+									<input type="checkbox" class="custom-control-input"
+										id="customControlAutosizing2"> <label
+										class="custom-control-label" for="customControlAutosizing2">I
+										Accept to the Terms & Conditions</label>
 								</div>
 							</div>
-						</div>
-						<hr><br><br>
-						
-						
-						<!-- //fourth section -->
-						
-						<!-- //fourth section -->
+						</sf:form>
 					</div>
 				</div>
-				<!-- //product left -->
-					
 			</div>
-				
-		</div>
-			
-	</div>
-
-	
+		
+		<br><br><br><br>
+	<!-- footer -->
+		<%@ include file = "../../canal/footer.jsp" %>
+	<!-- //copyright -->
 
 	<!-- js-files -->
 	<!-- jquery -->
@@ -279,6 +270,10 @@
 		}
 	</script>
 	<!-- //password-script -->
+	
+	<!-- scroll seller -->
+	<script src="${js}/scroll.js"></script>
+	<!-- //scroll seller -->
 
 	<!-- smoothscroll -->
 	<script src="${js}/SmoothScroll.min.js"></script>
@@ -311,25 +306,31 @@
 				easingType: 'linear' 
 			};
 			*/
-	/* 	 	$().UItoTop({
+		/* 	$().UItoTop({
 				easingType: 'easeOutQuart'
-			});  */
-
+			}); 
+ */
 		});
 	</script>
 	<!-- //smooth-scrolling-of-move-up -->
 
 	<!-- for bootstrap working -->
 	<script src="${js}/bootstrap.js"></script>
+	<!-- //for bootstrap working -->
+	<!-- //js-files -->
+	
+	<!-- js-files -->
+	<!-- jquery -->
+	<script src="${js}/jquery-2.2.3.min.js"></script>
 	<script src="${js}/jquery.dataTables.js"></script>
 	<script src="${js}/myapp.js"></script>
 	<script src="${js}/dataTables.bootstrap4.js"></script>
-	<script src="${js}/jquery-2.2.3.min.js"></script>
 	<script src="${js}/jquery.dataTables.js"></script>
 	<script src="${js}/bootbox.min.js"></script>
-	<!-- //for bootstrap working -->
-	<!-- //js-files -->
-
+	<script src="${js}/jquery.validate.js"></script>
+	<script src="${js}/jquery.validate.min.js"></script>
+	
 </body>
 
 </html>
+

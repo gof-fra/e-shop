@@ -35,6 +35,7 @@ public class ManagementController {
 	
 	@Autowired
 	private ProductDAO productDAO;
+
 	
 	private static final Logger logger = LoggerFactory.getLogger(ManagementController.class);
 	
@@ -45,7 +46,7 @@ public class ManagementController {
 		
 		
 		mv.addObject("userClickManageProducts", true);
-		mv.addObject("title", "Manage products");
+		mv.addObject("title", "Ajouter produits");
 		Product nProduct = new Product();
 		
 		// set few of the fields  // create new product
@@ -60,7 +61,7 @@ public class ManagementController {
 			
 			if(operation.equals("product")) {
 				
-				mv.addObject("message", "Product successfully submitted");
+				mv.addObject("message", "succes");
 				
 			}
 			else if(operation.equals("category")) {
@@ -82,7 +83,7 @@ public class ManagementController {
 		
 		
 		mv.addObject("userClickManageProducts", true);
-		mv.addObject("title", "Manage products");
+		mv.addObject("title", "Ajouter produits");
 		
 		// Fetch the product from database
 		Product nProduct = productDAO.get(id);

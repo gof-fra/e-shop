@@ -36,7 +36,7 @@ public class PageController {
 	public ModelAndView index() {
 		
 		ModelAndView mv = new ModelAndView("page");
-		mv.addObject("title", "Home");
+		mv.addObject("title", "Accueil");
 		
 		// logger
 		logger.info("Inside PageController index method - INFO");
@@ -54,7 +54,7 @@ public class PageController {
 	public ModelAndView about() {
 		
 		ModelAndView mv = new ModelAndView("page");
-		mv.addObject("title", "About Us");
+		mv.addObject("title", "A propos de nous");
 		mv.addObject("userClickAbout", true);		
 		return mv;	
 	}
@@ -71,7 +71,7 @@ public class PageController {
 	public ModelAndView showAllProducts() {
 		
 		ModelAndView mv = new ModelAndView("page");
-		mv.addObject("title", "All Prodcuts");
+		mv.addObject("title", "Nos produits");
 		
 		// passing the list of categories
 		mv.addObject("categories", categoryDAO.list());

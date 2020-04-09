@@ -127,46 +127,46 @@
 					>
 	
 						<div class="form-group">
-							<label class="control-label col-md-44" for="name">Enter Product Name</label>
+							<label class="control-label col-md-44" for="name">Nom:</label>
 							<div class="col-md-44">
-								<sf:input type="text" path="name" id="name" placeholder="Product Name" class="form-control" />
+								<sf:input type="text" path="name" id="name" placeholder="Entrez le nom du produit" class="form-control" />
 								<sf:errors path="name" cssClass="help-block" element="em" />
 							</div>
 						</div>
 						
 						<div class="form-group">
-							<label class="control-label col-md-44" for="name">Enter Brand Name</label>
+							<label class="control-label col-md-44" for="name">Contact:</label>
 							<div class="col-md-44">
-								<sf:input type="text" path="brand" id="brand" placeholder="Brand Name" class="form-control" />
+								<sf:input type="text" path="brand" id="brand" placeholder="Saisissez votre contact!" class="form-control" />
 								<sf:errors path="brand" cssClass="help-block" element="em" />
 							</div>
 						</div>
 						
 						<div class="form-group">
-							<label class="control-label col-md-44" for="description"> Product Description: </label>
+							<label class="control-label col-md-44" for="description"> Description: </label>
 								<div class="col-md-44">
-									<sf:textarea path="description" id="description" rows="4" placeholder="Write some description" class="form-control" />
+									<sf:textarea path="description" id="description" rows="4" placeholder="Veillez decrire le produit" class="form-control" />
 									<sf:errors path="description" cssClass="help-block" element="em" />
 								</div>
 						</div>
 																		
 						<div class="form-group">						
-							<label class="control-label col-md-44" for="unitPrice"> Enter Unit Price: </label>						
+							<label class="control-label col-md-44" for="unitPrice"> Prix: </label>						
 							 <div class="col-md-44">							
-								<sf:input type="number" path="unitPrice" id="unitPrice" placeholder="Write price" class="form-control"/>
+								<sf:input type="number" path="unitPrice" id="unitPrice" placeholder="Precisez le prix" class="form-control"/>
 							 	<sf:errors path="unitPrice" cssClass="help-block" element="em" />
 							 </div>
 						</div>
 																				
 						<div class="form-group">						
-							<label class="control-label col-md-44" for="quantity"> Quantity: </label>								
+							<label class="control-label col-md-44" for="quantity"> Quantité: </label>								
 							<div class="col-md-44">									
-								<sf:input type="number" path="quantity" id="quantity" placeholder="Write quantity" class="form-control"/>									
+								<sf:input type="number" path="quantity" id="quantity" placeholder="Precisez la quantite" class="form-control"/>									
 							</div>
 						</div>
 						
 						<div class="form-group">						
-							<label class="control-label col-md-44" for="file"> Select Image: </label>								
+							<label class="control-label col-md-44" for="file"> Selectionnez image: </label>								
 							<div class="col-md-44">									
 								<sf:input type="file" path="file" id="file" class="form-control"/>	
 								<sf:errors path="file" cssClass="help-block" element="em" />								
@@ -174,7 +174,7 @@
 						</div>
 						
 						<div class="form-group">		
-							<label class="control-label col-md-44" for="categoryId"> Select Category: </label>								
+							<label class="control-label col-md-44" for="categoryId"> Selectionnez categories: </label>								
 							<div class="col-md-44">									
 								<sf:select class="form-control" id="categoryId" path="categoryId"
 									items="${categories}"
@@ -188,8 +188,9 @@
 								<div class="text-right">
 									
 									<button type="button" data-toggle="modal" data-target="#myCategoryModal" class="btn btn-warning btn-xs">
-										Add Category
+										Ajouter categories
 									</button>
+									<p style="color: red;">Seul admin peut faire cette operation!</p>
 								</div>
 								
 									
@@ -200,7 +201,7 @@
 						
 						<div class="form-group">
 							<div class="col-md-offset-4 col-md-44" >
-								<input type="submit" name="submit" id="submit"  class="bt btn-primary" />		
+								<input type="submit" name="submit" value="Soumettre" id="submit" width="55" height="66" class="bt btn-primary" />		
 								
 								<sf:hidden path="id"/>
 								<sf:hidden path="code"/>
@@ -225,11 +226,12 @@
 
 	<!-- Admin table -->
 	<hr>
+	<security:authorize access="hasAuthority('ADMIN')">
 	<h3 class="tittle-w3l text-center mb-lg-5 mb-sm-4 mb-3">
-		<span>A</span>vailable 
-		<span>P</span>roducts
+		<span>P</span>roduits
+		<span>D</span>isponible
 	</h3>
-
+	
 	<div class="container">
 		<div class="agileinfo-ads-display col-lg-12">
 		  <div class="wrapper">
@@ -252,77 +254,7 @@
 									</tr>
 							</thead>
 							
-			     			<%--  <tbody>
-									<tr>
-										<td> 4 </td>
-										<td> 
-											
-											<img class="adminDatatableImg" src="${contextRoot}/resources/images/PRDDEF121OPMC.jpg"
-											alt="Mac OS" />
-											
-										</td>
-										
-										<td> Mac OS</td>
-										
-										<td>Apple</td>
-										
-										<td> 115 </td>  <!-- 3 quantity -->
-										
-										<td> &#8377; 7950.00 /- </td>
-										
-										<td> 
-											<label class="switch">
-									            <input type="checkbox" checked="checked" value="4" />
-									            <div class="slider"></div>
-									        </label>
-										</td>
-										
-										<td> 
-											
-											<a href="${contextRoot}/manage/4/product" class="btn btn-warning">
-												<span class="glyphicon glyphicon-pencil"></span>
-											</a>
-											
-										</td>
-									</tr>
-									
-									<!-- ------- -->
-									
-									<tr>
-										<td> 4 </td>
-										<td> 
-											
-											<img class="adminDatatableImg" src="${contextRoot}/resources/images/PRDDEF121OPMC.jpg"
-											alt="Mac OS" />
-											
-										</td>
-										
-										<td> Mac OS</td>
-										
-										<td>Apple</td>
-										
-										<td> 115 </td>
-										
-										<td> &#8377; 7950.00 /- </td>
-										
-										<td> 
-									        <label class="switch">
-									            <input type="checkbox" value="4" />
-									            <div class="slider"></div>
-									        </label>
-										</td>
-										
-										<td> 
-											
-											<a href="${contextRoot}/manage/4/product" class="btn btn-warning">
-												<span class="glyphicon glyphicon-pencil"></span>
-											</a>
-											
-										</td>
-									</tr>
-									
-									
-							</tbody>   --%>
+			     			
 							 
 							<tfoot>
 									<tr>
@@ -346,9 +278,11 @@
 			  </div>
 			</div>
 		</div>
+		
 	</div>
-	
+	</security:authorize>
 	<!-- Adding a new category -->
+	<security:authorize access="hasAuthority('ADMIN')">
 	<div class="modal fade" id="myCategoryModal" role="dialog" tabindex="-1">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
@@ -357,6 +291,7 @@
 						<span>&times;</span>
 						<h4 class="modal-title">Add New Category</h4>
 					</button>
+					
 				</div>
 				<div class="modal-body">
 					<sf:form id="categoryForm" modelAttribute="category" action="${contextRoot}/manage/category"
@@ -393,7 +328,7 @@
 			</div>
 		</div>
 	</div>
-		
+	</security:authorize>
 	<hr>
 	
 

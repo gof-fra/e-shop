@@ -22,7 +22,7 @@ public class ProductValidator implements Validator {
 		if(product.getFile() == null ||
 				product.getFile().getOriginalFilename().equals("")) {
 			
-			errors.rejectValue("file",null, "Select an image for upload!");
+			errors.rejectValue("file",null, "Selectionner une image pour joindre!");
 			return;
 		}
 		
@@ -33,7 +33,7 @@ public class ProductValidator implements Validator {
 			  product.getFile().getContentType().equals("image/gif") 
 			  )) {
 			
-			errors.rejectValue("file", null, "Use only image to upload");
+			errors.rejectValue("file", null, "Respectez les normes des images!");
 			return;
 		}
 		

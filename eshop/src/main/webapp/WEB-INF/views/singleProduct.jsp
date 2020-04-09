@@ -111,13 +111,16 @@
 					<p class="mb-3">${product.description}</p>
 					<hr>
 					
+					<p class="mb-3">${product.brand}</p>
+					<hr>
+					
 					<h4>Price: <strong>&#8377; ${product.unitPrice} </strong></h4>
 					<hr>
 					
 					
 					<c:choose>
 						<c:when test="${product.quantity < 1}">
-							<h6>Qty: <span style="color:red">Out of Stock</span></h6>
+							<h6>Qty: <span style="color:red">En rupture</span></h6>
 						</c:when>
 						
 						<c:otherwise>
@@ -129,8 +132,8 @@
 					<security:authorize access="hasAuthority('USER')">
 						<c:choose>
 							<c:when test="${product.quantity < 1}">
-								<a href="javascript:void(0)" class="btn btn-success disabled"> <strike>
-									<span class="glyphicon glyphicon-shopping-cart">Add to cart</strike></span>
+								<a href="javascript:void(0)" class="btn btn-success disabled">
+								 <strike> <span class="glyphicon glyphicon-shopping-cart">Add to cart</strike></span>
 								</a>
 							</c:when>
 							

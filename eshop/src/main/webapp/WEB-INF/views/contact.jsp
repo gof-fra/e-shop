@@ -68,7 +68,7 @@
 						<a href="${contextRoot}/home">Home</a>
 						<i>|</i>
 					</li>
-					<li>Contact Us</li>
+					<li>Nos contact!</li>
 				</ul>
 			</div>
 		</div>
@@ -80,8 +80,8 @@
 		<div class="container py-xl-4 py-lg-2">
 			<!-- tittle heading -->
 			<h3 class="tittle-w3l text-center mb-lg-5 mb-sm-4 mb-3">
+				<span>N</span>os
 				<span>C</span>ontact
-				<span>U</span>s
 			</h3>
 			<!-- //tittle heading -->
 			<div class="row contact-grids agile-1 mb-5">
@@ -107,7 +107,7 @@
 						</div>
 						<h4 class="font-weight-bold mt-sm-4 mt-3 mb-3">Call Us</h4>
 						<p>
-							<label>+(235) 66 21 31 50</label>
+							<label>+(235) 60 95 19 00 / 92 95 19 00</label>
 						</p>
 					</div>
 				</div>
@@ -120,7 +120,7 @@
 						</div>
 						<h4 class="font-weight-bold mt-sm-4 mt-3 mb-3">Email</h4>
 						<p>
-							<a href="">dia_info@gmail.com</a>
+							<a href="">affrahsop.td@gmail.com</a>
 						</p>
 					</div>
 				</div>

@@ -92,7 +92,7 @@ $(function() {
 							
 							if(data < 1) {
 								
-								return '<span style="color:red">Out of Stock!</span>';
+								return '<span style="color:red">En rupture!</span>';
 								
 							}
 							return data;
@@ -146,36 +146,6 @@ $(function() {
 	}
 	
 		
-		$.fn.modal = false
-		$.fn.BootstrapVersion = '4.0.0';
-	
-		$('.switch input[type="checkbox"]').on('change', function()  {
-			var checkbox = $(this);
-			var	checked = checkbox.prop('checked');
-			var dMsg = (checked)? 'You want to activate the product? ':
-								  'You want to desactivate the product? ';
-			var value = checkbox.prop('value');
-				bootbox.confirm({
-				size: 'medium',
-				title: 'Product Activation & Desactivation',
-				message: dMsg,
-				callback: function(confirmed) {
-					if(confirmed) {
-						console.log(value);
-						bootbox.alert({
-							size: 'medium',
-							title: 'Information',
-							message: 'You are going to perform operation on product '  + value
-						});
-					}
-					else {
-						checkbox.prop('checked', !checked);
-					}
-				}
-			});
-		 });
-	
-		
 	// ------------------------
 	// data table for admin
 	// ------------------------
@@ -222,7 +192,7 @@ $(function() {
 								
 								if(data < 1) {
 									
-									return '<span style="color:red">Out to stock!</span>';
+									return '<span style="color:red">En rupture!</span>';
 									
 								}
 								

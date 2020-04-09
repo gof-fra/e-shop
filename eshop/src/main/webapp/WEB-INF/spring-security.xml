@@ -32,7 +32,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
 	
 	<http>
 		<!-- only admin -->
-		<intercept-url pattern="/manage/**" access="hasAuthority('ADMIN')" />
+		<intercept-url pattern="/**" access="hasAuthority('ADMIN')" />
 		<!-- Who is registred -->
 		<intercept-url pattern="/cart/**" access="hasAuthority('USER')" />
 		<!-- Rest -->

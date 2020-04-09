@@ -18,18 +18,29 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableTransactionManagement
 public class HibernateConfig {
 	
+	// private final static String DATABASE_URL = "jdbc:h2:~/affrahDB";
+	
+	
+	// h2database
+	
 	private final static String DATABASE_URL = "jdbc:h2:tcp://localhost/~/eshopDB";
 	private final static String DATABASE_DRIVER = "org.h2.Driver";
 	private final static String DATABASE_DIALECT = "org.hibernate.dialect.H2Dialect";
 	private final static String DATABASE_USERNAME = "haggar";
 	private final static String DATABASE_PASSWORD = "";
-	// private final static String DATABASE_URL = "jdbc:h2:~/affrahDB";
 	
-/*	private final static String DATABASE_URL = "jdbc:mysql://localhost:3306/eshopDB";
-	private final static String DATABASE_DRIVER = "com.mysql.jdbc.Driver";
+	// private final static String DATABASE_URL = "jdbc:h2:tcp://localhost/opt/h2/h2db/eshopDB";
+	
+	
+	
+	
+	// mysql
+	
+	/*private final static String DATABASE_URL = "jdbc:mysql://localhost:3366/eshopDB";
+	private final static String DATABASE_DRIVER = "com.mysql.cj.jdbc.Driver";
 	private final static String DATABASE_DIALECT = "org.hibernate.dialect.MySQL8Dialect";
-	private final static String DATABASE_USERNAME = "haggar";
-	private final static String DATABASE_PASSWORD = "";*/
+	private final static String DATABASE_USERNAME = "root";
+	private final static String DATABASE_PASSWORD = "Efibcus8";*/
 
 	
 	@Bean("dataSource")
@@ -69,7 +80,7 @@ public class HibernateConfig {
 		properties.put("hibernate.show_sql", "true");
 		properties.put("hibernate.format_sql", "true");
 		
-		// create dataTable automatic
+		// create dataTable automatic  update<->create
 		properties.put("hibernate.hbm2ddl.auto", "update");
 		
 		return properties;

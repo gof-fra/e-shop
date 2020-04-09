@@ -190,7 +190,7 @@
 					name="agileinfo_search" class="border" required="">
 					<a class="btn btn-info dropdown-toggle" href="#" role="button"
 						id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-						aria-expanded="false"> All Category </a>
+						aria-expanded="false"> Categories </a>
 					<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
 						<c:forEach items="${categories}" var="category">
 							<a href="${contextRoot}/show/category/${category.id}/products"
@@ -208,10 +208,10 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav ml-auto text-center mr-xl-5">
 					<li class="nav-item active mr-lg-2 mb-lg-0 mb-2"><a
-						class="nav-link" href="${contextRoot}/home" id="home">Home <span
+						class="nav-link" href="${contextRoot}/home" id="home">Accueil <span
 							class="sr-only">(current)</span>
 					</a></li>
-					<li class="nav-item dropdown mr-lg-2 mb-lg-0 mb-2" id="elect">
+					<%-- <li class="nav-item dropdown mr-lg-2 mb-lg-0 mb-2" id="elect">
 						<a class="nav-link dropdown-toggle" href="#" role="button"
 						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							Electronics </a>
@@ -243,8 +243,16 @@
 								</div>
 							</div>
 						</div>
-					</li>
-					<li class="nav-item dropdown mr-lg-2 mb-lg-0 mb-2" id="elect">
+					</li> --%>
+					<li class="nav-item mr-lg-2 mb-lg-0 mb-2" id="#">
+							<a class="nav-link" href="${contextRoot}/show/all/products">Nos Produits</a>
+						</li>
+					
+					<li class="nav-item mr-lg-2 mb-lg-0 mb-2"><a class="nav-link" href="${contextRoot}/manage/products"
+							id="manageProducts">Ajouter Produit</a></li>
+					
+
+					<%-- <li class="nav-item dropdown mr-lg-2 mb-lg-0 mb-2" id="elect">
 						<a class="nav-link dropdown-toggle" href="#" role="button"
 						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							Pages </a>
@@ -254,8 +262,6 @@
 								<div class="row">
 									<div class="col-sm-6 multi-gd-img">
 										<ul class="multi-column-dropdown">
-											<li><a href="${contextRoot}/show/all/products">Product</a>
-											</li>
 											<li><a href="${contextRoot}/single" id="single">Single
 													Product</a></li>
 										</ul>
@@ -266,22 +272,17 @@
 											</li>
 											<li><a href="${contextRoot}/payment" id="payment">Payment</a>
 											</li>
-											<security:authorize access="hasAuthority('ADMIN')">
-												<li><a href="${contextRoot}/manage/products"
-													id="manageProducts">Manage</a></li>
-											</security:authorize>
+											
 										</ul>
 									</div>
 								</div>
 							</div>
 						</div>
-					</li>
+					</li> --%>
 					<li class="nav-item mr-lg-2 mb-lg-0 mb-2" id="elect"><a
-						class="nav-link" href="${contextRoot}/about" id="about">About
-							Us</a></li>
+						class="nav-link" href="${contextRoot}/about" id="about">Nous </a></li>
 					<li class="nav-item mr-lg-2 mb-lg-0 mb-2" id="elect"><a
-						class="nav-link" href="${contextRoot}/contact" id="contact">Contact
-							Us</a>
+						class="nav-link" href="${contextRoot}/contact" id="contact">Contact </a>
 					</li>
 					<security:authorize access="isAnonymous()">
 						<li>
@@ -299,7 +300,7 @@
 					</security:authorize>
 					
 					<security:authorize access="isAuthenticated()">
-						<li class="dropdown">
+						<li class="nav-item dropdown mr-lg-2 mb-lg-0 mb-2">
 							<a href="javascript:void(0)"
 							class="btn btn-default dropdown-toggle"
 							id="dropdownMenu1"

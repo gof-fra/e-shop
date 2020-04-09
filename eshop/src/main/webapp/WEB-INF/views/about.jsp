@@ -68,7 +68,7 @@
 						<a href="${contextRoot}/home">Home</a>
 						<i>|</i>
 					</li>
-					<li>About Us</li>
+					<li>A propos de nous</li>
 				</ul>
 			</div>
 		</div>
@@ -80,8 +80,11 @@
 		<div class="container py-xl-4 py-lg-2">
 			<!-- tittle heading -->
 			<h3 class="tittle-w3l text-center mb-lg-5 mb-sm-4 mb-3">
-				<span>A</span>bout
-				<span>U</span>s</h3>
+				<span>A</span>
+				<span>p</span>ropos
+				<span>d</span>e
+				<span>n</span>ous
+				</h3>
 			<!-- //tittle heading -->
 			<div class="row">
 				<div class="col-lg-6 welcome-left">
